@@ -1,0 +1,130 @@
+
+    <div class="skin-blue na main" style="
+    background-image: url(../assets/images/bg1.jpg);  
+    background-size: 100% 100%;
+    ">
+        <div style="opacity: 0.9;">
+        <div class="navbar-top">
+            <div class="navbar-header">
+                <p>
+                    Donate Now<br>
+            Your Donation is Needed Now More Than Ever.
+            During this time of uncertainty, many seniors are left in isolation and are having trouble accessing basic needs. Your donation helps Meals on Wheels provide warm meals and check-ins for thousands of seniors at this challenging time.
+            <br> Thank you for your donation!
+                </p>
+            </div>
+           
+        </div>
+        <div class="container container-holder">
+            <hr>
+           
+            <div class="wrapper row-offcanvas row-offcanvas-left">
+              <form [formGroup]="donation_frm" (ngSubmit)="donate()">
+                <div class="Fname" >
+                    <div class="mb-1 row  ">
+                        <label for="First Name" class="col-sm-2 col-form-label" style="margin: 8px;">First Name</label>
+                      </div>
+                      <div class="row">
+                        <input type="text"  formControlName="fname" class="form-control  " id="inputFirstName" style="margin-left: 15px; width: 70%;">
+                        <div *ngIf="u['fname'].touched && u['fname'].invalid" class="alert alert-danger">
+                          <div *ngIf="u['fname'].errors && u['fname'].errors['required']">First Name is required.</div>
+                      </div>
+                      </div>
+                 </div>
+                 <div class="Lname">
+                    <div class="mb-1 row  ">
+                        <label for="Last Name" class="col-sm-2 col-form-label" style="margin: 8px;">Last Name</label>
+                      </div>
+                      <div class="row">
+                        <input type="text" formControlName="lname" class="form-control" id="inputLastName" style="margin-left: 15px; width: 70%;">
+                      
+                        <div *ngIf="u['lname'].touched && u['lname'].invalid" class="alert alert-danger">
+                          <div *ngIf="u['lname'].errors && u['lname'].errors['required']">Last Name is required.</div>
+                      </div>
+                    </div>
+                      </div>
+                <div class="Email">
+                <div class="mb-1 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label" style="margin: 8px;">Email</label>
+                  </div>
+                  <div class="row">
+                    <input type="email" formControlName="email_id" class="form-control  " id="inputPassword" style="margin-left: 15px; width: 70%;">
+                    <div *ngIf="u['email_id'].touched && u['email_id'].invalid" class="alert alert-danger">
+                      <div *ngIf="u['email_id'].errors && u['email_id'].errors['required']">Email is required.</div>
+                      <div *ngIf="u['email_id'].errors && u['email_id'].errors['email']">Please, enter valid email address.</div>
+                  </div>
+                  </div>
+                  </div>
+                  <div class="PhoneNumber">
+                    <div class="mb-1 row">
+                        <label for="PhoneNumber" class="col-sm-2 col-form-label"style="margin: 8px;">Phone Number</label>
+                      </div>
+                      <div class="row">
+                        <input type="text" formControlName="phone_number" class="form-control  " id="inputPhoneNumber" style="margin-left: 15px; width: 70%;">
+                        <div *ngIf="u['phone_number'].touched && u['phone_number'].invalid" class="alert alert-danger">
+                          <div *ngIf="u['phone_number'].errors && u['phone_number'].errors['required']">Phone Number is required.</div> 			  
+                          <div *ngIf="u['phone_number'].errors && u['phone_number'].errors['minlength']">Phone Number should be 10 character.</div>
+                          <div *ngIf="u['phone_number'].errors && u['phone_number'].errors['maxlength']">Phone Number should only be 10 character.</div>
+                      </div>
+                      </div>
+                      </div>
+                <div class="Address">
+                        <div class="mb-1 row">
+                            <label for="Address" class="col-sm-2 col-form-label"style="margin: 8px;">Address</label>
+                          </div>
+                          <div class="row">
+                            <input type="text" formControlName="address" class="form-control  " id="inputAddress" style="margin-left: 15px; width: 90%;">
+                          </div>
+                          </div>
+                <div class="row">
+                    <div class="mb-6 row">
+                        <div class="City col-sm-6">
+                                <label for="City" class="col-sm-2 col-form-label" style="margin: 8px;">City</label>
+                                <input type="text" formControlName="city" class="form-control  " id="inputCity" style="margin-left: 15px; width: 90%;">
+                        </div>
+                        <div class="State col-sm-6">
+                            <label for="State" class="col-sm-2 col-form-label" style="margin: 8px;">State</label>
+                            <input type="text" formControlName="state" class="form-control  " id="inputState" style="margin-left: 15px; width: 90%;">
+                    </div>
+                    </div>
+                    <div class="mb-6 row"></div>
+                </div>
+                <div class="row">
+                    <div class="mb-6 row">
+                        <div class="ZipCode col-sm-6">
+                                <label for="Zip Code" class="col-sm-2 col-form-label" style="margin: 8px;">Zip Code</label>
+                                <input type="text" formControlName="zipcode" class="form-control  " id="inputZipCode" style="margin-left: 15px; width: 90%;">
+                                <div *ngIf="u['zipcode'].touched && u['zipcode'].invalid" class="alert alert-danger">
+                                  <div *ngIf="u['zipcode'].errors && u['zipcode'].errors['required']">Phone Number is required.</div> 			  
+                                  <div *ngIf="u['zipcode'].errors && u['zipcode'].errors['minlength']">Phone Number should be 10 character.</div>
+                                  <div *ngIf="u['zipcode'].errors && u['zipcode'].errors['maxlength']">Phone Number should only be 10 character.</div>
+                              </div>
+                            
+                              </div>
+                        <div class="DonationAmount col-sm-6">
+                            <label for="Donation Amount" class="col-sm-2 col-form-label" style="margin: 8px;">Donation Amount</label>
+                            <input type="text" formControlName="don_amount" class="form-control  " id="inputDonationAmount" style="margin-left: 15px; width: 90%;">
+                            <div *ngIf="u['don_amount'].touched && u['don_amount'].invalid" class="alert alert-danger">
+                              <div *ngIf="u['don_amount'].errors && u['don_amount'].errors['required']">Enter amount for donation.</div>
+                          </div>
+                          </div>
+                    </div>
+                </div>
+
+               
+                <button type="submit" class="btn btn-primary " style="margin-top: 10px; width: 200px; margin-bottom: 15px; width: 100%;">Make Payment</button>
+                
+                <!-- .row class div ends -->
+                
+            </form>
+            </div>
+            <!-- .wrapper class div ends -->
+        </div>
+      </div>
+        <!-- .container class div ends -->
+
+        <!-- Modal -->
+ 
+
+
+</div>

@@ -1,0 +1,125 @@
+
+<app-admin-nav></app-admin-nav>
+<div class="row" style="margin-right:0px !important; background: #000000;">
+    <div class="col-md-2 " style="background: #191c24;">
+        <div id="list-example" style="margin-top: 10px; margin-left: 10px;"  class="list-group">
+            <a class="list-group-item list-group-item-action m-1" style="background: #0f1015 !important; color: white;" href="#list-item-1">User Information</a>
+            <a class="list-group-item list-group-item-action m-1" style="background: #0f1015 !important; color: white;" href="#list-item-2">Donar Information</a>
+          </div>
+      </div>
+<div class="col-md-10">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <h4 class="breadcrumb-item active" style="color: white;" aria-current="page">DashBoard</h4>
+        </ol>
+      </nav>
+
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item" >
+          <h2 class="accordion-header" id="headingOne" >
+            <button class="accordion-button" style="background: #0f1015 !important; color: white;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              User Information
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body" style="background: #000000; color: white;">
+                <div class="ex3">
+                    <div style=" color: white;border:  1px solid rgb(255, 255, 255); padding: 15px; border-radius: 5px 5px 30px 30px; margin-bottom: 15px; margin-right: 15px;">
+                        <table class="table table-dark">
+                            <thead>
+                              <tr>
+                                    <th scope="col">User Id</th>
+                                    <th scope="col">User Role</th>
+                                    <th scope="col"> User Name</th>
+                                    <th scope="col">User Email</th>
+                                    <th scope="col">Last order date</th>
+                                  </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th>1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <p>
+                            <a>Action:</a>
+                            <a class="btn m-1" style="background-color: #f44336; color: white;"  role="button" aria-expanded="false" aria-controls="collapseExample" >
+                              Delete
+                            </a>
+
+                            <a class="btn m-1" style="background-color: #48e11a; color: white;"  data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Update</a>
+                           
+                            <a class="btn m-1" style="background-color: #f1ff00;" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                Notify
+                              </a>
+                          </p>
+                          <div class="collapse" id="collapseExample">
+                            <div class="card card-body">
+                                <div class="input-group input-group-sm mb-3">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">Email Id</span>
+                                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                                  </div>
+                                  <div class="input-group input-group-sm mb-3">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">User Role</span>
+                                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                                  </div>
+                                  <button class="btn" style="background-color: #48e11a; color: white;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                    Update
+                                  </button>
+                            </div>
+                          </div>
+                    </div>
+                   
+                </div>
+          
+               
+                  
+            </div>
+          </div>
+        </div>
+      </div>
+      <br><br>
+      <div class="accordion" id="accordionPanelsStayOpenExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+            <button class="accordion-button" style="background: #0f1015 !important; color: white;" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+              Donar Information
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseOn" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+            <div class="accordion-body" style="background: #000000; color: white;">
+              <div class="ex3">
+              <table class="table table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">Sr.no</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Donation Amount</th>
+                    <th scope="col">Donation Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let d of donors; let i=index">
+                    <th scope="row">{{i}}</th>
+                    <td>{{d.first_name}} {{d.last_name}}</td>
+                    <td>{{d.email_id}}</td>
+                    <td>Rs. {{d.donation_amount}}</td>
+                    <!-- pipe madhe error aala tr google vr bagh nkki konta module app.module.ts madhe import karaycha hota te -->
+                    <td>{{d.donation_date| date: 'dd-MM-yyyy'}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+</div>
+</div>
+

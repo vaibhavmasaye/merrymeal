@@ -1,0 +1,38 @@
+/*!
+ * BillDesk v1.0 (https://www.billdesk.com)
+ * Copyright 2001 IndiaIdeas.com Ltd.
+ */
+
+/****** Top Bar ***/
+
+
+.navbar-top .custom-header>.navbar-brand {
+    margin: 15px 0px;
+}
+
+.navbar-top .custom-header {
+    border: 1px solid #DFDFDF;
+    border-bottom: 1px solid #BEBEBE;
+    border-radius: 5px 5px 0px 0px;
+    background: #F0F2F2;
+    color: #5A5A5C;
+    font-weight: bold;
+    text-shadow: 0 -1px 1px #FFFFFF;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#FEFEFE), to(#F0F2F2));
+    /* Saf4+, Chrome */
+    background-image: -webkit-linear-gradient(#FEFEFE, #F0F2F2);
+    /* Chrome 10+, Saf5.1+ */
+    background-image: -moz-linear-gradient(#FEFEFE, #F0F2F2);
+    /* FF3.6 */
+    background-image: -ms-linear-gradient(#FEFEFE, #F0F2F2);
+    /* IE10 */
+    background-image: -o-linear-gradient(#FEFEFE, #F0F2F2);
+    /* Opera 11.10+ */
+    background-image: linear-gradient(#FEFEFE, #F0F2F2);
+}
+
+img.mercLogo {
+    top: 13%;
+    left: 5px;
+    max-height: 90%;
+}

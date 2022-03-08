@@ -1,0 +1,21 @@
+@import url(https://drive.google.com/uc?id=1FnO6YNtCLJFay1K0hq2peNPD7UMfxd7f);
+
+@import url(https://drive.google.com/uc?id=1CAmrtsFRWNRK8nXhnfmBNLbTvNdwAGXN);
+
+.main{
+    background-repeat: no-repeat;
+}
+
+.option{
+    border-top: 1px solid #fff;
+    margin-right: 1px;
+    display: block;
+    padding: 10px !important;
+    font-size: 16px !important;
+    font-weight: 400;
+    color: #343434;
+    cursor: pointer;
+    border-bottom: 1px solid #dbdbdb;
+position: relative;
+}
+
