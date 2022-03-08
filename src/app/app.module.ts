@@ -13,6 +13,8 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { AdminNavComponent } from './admin-nav/admin-nav.component';
 import { PartnerRegistrationComponent } from './partner-registration/partner-registration.component';
 import { VolunteerRegistrationComponent } from './volunteer-registration/volunteer-registration.component';
+import { MemberRegistrationComponent } from './member-registration/member-registration.component';
+import { CaregiverRegistrationComponent } from './caregiver-registration/caregiver-registration.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { VolunteerRegistrationComponent } from './volunteer-registration/volunte
     AdminDashboardComponent,
     AdminNavComponent,
     PartnerRegistrationComponent,
-    VolunteerRegistrationComponent
+    VolunteerRegistrationComponent,
+    MemberRegistrationComponent,
+    CaregiverRegistrationComponent
   ],
   imports: [
     BrowserModule,
