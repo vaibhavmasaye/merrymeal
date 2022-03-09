@@ -17,6 +17,8 @@ export class PartnerRegistrationComponent implements OnInit {
   address: any;
   contact_number: any;
   postal_code: any;
+  kitchen: any;
+  sponsor: any;
   public createAppForm: FormGroup; 
   data: {} | undefined;
   formData: any;
@@ -37,7 +39,10 @@ export class PartnerRegistrationComponent implements OnInit {
       password: ['', [Validators.required]],
       address: ['', [Validators.required]],
       contact_number: ['', [Validators.required]],
-      postal_code: ['', [Validators.required]]
+      postal_code: ['', [Validators.required]],
+      // kitchen: ['', [Validators.required]],
+      // sponsor: ['', [Validators.required]]
+
 
     });
    }
@@ -58,7 +63,9 @@ export class PartnerRegistrationComponent implements OnInit {
       password:  this.formData.password,
       address: this.formData.address,
       contact_number: this.formData.contact_number,
-      postal_code: this.formData.postal_code
+      postal_code: this.formData.postal_code,
+      // kitchen: this.formData.kitchen,
+      // sponsor: this.formData.sponsor
     };
     this.submitted = true
     if (this.createAppForm.invalid) {
