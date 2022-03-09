@@ -13,6 +13,10 @@ export class CreateMenuComponent implements OnInit {
     fname: new FormControl('', Validators.required),
     lname: new FormControl('', Validators.required),
     mondayMenu: new FormControl('', [Validators.required]),
+    tuesdayMenu: new FormControl('', [Validators.required]),
+    wednesdayMenu: new FormControl('', [Validators.required]),
+    thursdayMenu: new FormControl('', [Validators.required]),
+    fridayMenu: new FormControl('', [Validators.required]),
   });
 
   constructor(

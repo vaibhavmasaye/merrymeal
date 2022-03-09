@@ -1,4 +1,3 @@
-<header></header>
 <body oncontextmenu="false" class="snippet-body">
   <div class="header">
     <h1 class="header_title">Create MENU</h1>
@@ -44,7 +43,6 @@
                   name="fname"
                   formControlName="fname"
                   placeholder="Enter your first name"
-                  onblur="validate(1)"
                 />
                 <div
                   *ngIf="u['fname'].touched && u['fname'].invalid"
@@ -65,7 +63,6 @@
                   name="lname"
                   formControlName="lname"
                   placeholder="Enter your last name"
-                  onblur="validate(2)"
                 />
                 <div
                   *ngIf="u['lname'].touched && u['lname'].invalid"
@@ -88,7 +85,6 @@
                   name="mondayMenu"
                   formControlName="mondayMenu"
                   placeholder="Mention one item"
-                  onblur="validate(6)"
                 />
                 <div
                   *ngIf="u['mondayMenu'].touched && u['mondayMenu'].invalid"
@@ -112,7 +108,6 @@
                   name="tuesdayMenu"
                   formControlName="tuesdayMenu"
                   placeholder="Mention one item"
-                  onblur="validate(6)"
                 />
                 <div
                   *ngIf="u['tuesdayMenu'].touched && u['tuesdayMenu'].invalid"
@@ -137,7 +132,6 @@
                   name="ans"
                   formControlName="wednesdayMenu"
                   placeholder="Mention one item"
-                  onblur="validate(6)"
                 />
                 <div
                   *ngIf="
@@ -164,7 +158,6 @@
                   name="ans"
                   formControlName="thursdayMenu"
                   placeholder="Mention one item"
-                  onblur="validate(6)"
                 />
                 <div
                   *ngIf="u['thursdayMenu'].touched && u['thursdayMenu'].invalid"
@@ -189,7 +182,6 @@
                   name="ans"
                   formControlName="fridayMenu"
                   placeholder="Mention one item"
-                  onblur="validate(6)"
                 />
                 <div
                   *ngIf="u['fridayMenu'].touched && u['fridayMenu'].invalid"
