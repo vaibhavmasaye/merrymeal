@@ -2,6 +2,8 @@ import { Routes } from '@angular/router';
 import { DonarInfoComponent } from './donar-info/donar-info.component';
 import { PartnerRegistrationComponent } from './partner-registration/partner-registration.component';
 import { TransationInfoComponent } from './transation-info/transation-info.component';
+import {CreateMenuComponent} from './create-menu/create-menu.component';
+import {DisplayMenuComponent} from './display-menu/display-menu.component';
 import { VolunteerRegistrationComponent } from './volunteer-registration/volunteer-registration.component';
 
 const appRoutes: Routes = [
@@ -16,6 +18,12 @@ const appRoutes: Routes = [
     component: TransationInfoComponent
   },
   {
+    path: 'create-menu',
+    component: CreateMenuComponent
+  },
+  {
+    path: 'display-menu',
+    component: DisplayMenuComponent
     path: 'partner-register',
     component: PartnerRegistrationComponent
   },
