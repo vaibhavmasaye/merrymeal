@@ -1,6 +1,7 @@
 <body oncontextmenu="false" class="snippet-body">
   <div class="header">
     <h1 class="header_title">Create MENU</h1>
+
     <p class="header_para">Select type of food you want to provide</p>
   </div>
   <div class="container-fluid px-1 py-5 mx-auto">
@@ -15,7 +16,14 @@
           >
             <div class="radio_button">
               <label for="veg">Veg</label>
-              <input type="radio" id="foodtype" name="foodtype" value="veg" />
+              <input
+                type="radio"
+                id="foodtype"
+                name="foodtype"
+                formControlName="foodtype"
+                value="veg"
+                checked="checked"
+              />
               <br />
               <label for="non-veg">Non-Veg</label>
               <input
@@ -23,7 +31,9 @@
                 id="foodtype"
                 name="foodtype"
                 value="non-veg"
+                formControlName="foodtype"
               />
+
               <br />
               <label for="nutritional">Nutritional</label>
               <input
@@ -31,6 +41,7 @@
                 id="foodtype"
                 name="foodtype"
                 value="nutritional"
+                formControlName="foodtype"
               />
             </div>
             <hr />

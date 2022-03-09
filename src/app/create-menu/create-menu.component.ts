@@ -35,6 +35,7 @@ export class CreateMenuComponent implements OnInit {
 
         let c = this.createMenu_form.value    
         this.new_menu = {
+          food_type: c.foodtype,
           first_name:c.fname,
           last_name: c.lname,
           monday: c.mondayMenu,

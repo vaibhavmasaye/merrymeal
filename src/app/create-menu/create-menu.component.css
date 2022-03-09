@@ -6,7 +6,10 @@ body {
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
-
+.header_title {
+  text-align: center;
+  font-weight: bolder;
+}
 .body::-webkit-scrollbar {
   display: none;
 }
