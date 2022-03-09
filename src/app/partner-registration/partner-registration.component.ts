@@ -40,8 +40,8 @@ export class PartnerRegistrationComponent implements OnInit {
       address: ['', [Validators.required]],
       contact_number: ['', [Validators.required]],
       postal_code: ['', [Validators.required]],
-      // kitchen: ['', [Validators.required]],
-      // sponsor: ['', [Validators.required]]
+      kitchen: ['', [Validators.required]],
+      sponsor: ['', [Validators.required]]
 
 
     });
@@ -64,8 +64,8 @@ export class PartnerRegistrationComponent implements OnInit {
       address: this.formData.address,
       contact_number: this.formData.contact_number,
       postal_code: this.formData.postal_code,
-      // kitchen: this.formData.kitchen,
-      // sponsor: this.formData.sponsor
+      kitchen: this.formData.kitchen,
+      sponsor: this.formData.sponsor
     };
     this.submitted = true
     if (this.createAppForm.invalid) {
@@ -73,7 +73,7 @@ export class PartnerRegistrationComponent implements OnInit {
     }
     else {
       this.HttpService.AddUser(this.data).subscribe((res) => { 
-        console.log("Donor Added Successfully")
+        // console.log(this.data, 'this.data')
         // this.router.navigate(['/login']);
       },
       (err: { message: string; }) => (this.error = err.message)
