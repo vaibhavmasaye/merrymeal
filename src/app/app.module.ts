@@ -11,6 +11,8 @@ import { DonarInfoComponent } from './donar-info/donar-info.component';
 import { TransationInfoComponent } from './transation-info/transation-info.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AdminNavComponent } from './admin-nav/admin-nav.component';
+import { PartnerRegistrationComponent } from './partner-registration/partner-registration.component';
+import { VolunteerRegistrationComponent } from './volunteer-registration/volunteer-registration.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { AdminNavComponent } from './admin-nav/admin-nav.component';
     DonarInfoComponent,
     TransationInfoComponent,
     AdminDashboardComponent,
-    AdminNavComponent
+    AdminNavComponent,
+    PartnerRegistrationComponent,
+    VolunteerRegistrationComponent
   ],
   imports: [
     BrowserModule,
