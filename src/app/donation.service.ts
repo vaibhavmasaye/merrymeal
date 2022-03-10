@@ -30,4 +30,8 @@ export class DonationService {
     return this.http.delete(this.Url+'/deleteUser_Detail/'+id );
   }
 
+  Sendnotification(email_id:any) {
+    return this.http.post(this.Url+'/notification',email_id );
+  }
+
 }

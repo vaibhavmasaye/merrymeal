@@ -78,4 +78,18 @@ export class AdminDashboardComponent implements OnInit {
     
   }
 
+  Sendnotification(email_id:any) {
+    this.DonationService.Sendnotification({email_id:email_id}).subscribe((res) => { 
+        this.getUsersList();
+        console.log("User notification send: OK!");
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+    
+  }
+
+  
+
 }

@@ -52,13 +52,13 @@
                             </a>
 
                             <a class="btn m-1" style="background-color: #48e11a; color: white;"  data-toggle="collapse"
-                             href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" (click)="setValues(u.email_id,u.user_type)">Update</a>
+                             href="#collapseExample{{i}}" role="button" aria-expanded="false" aria-controls="collapseExample" (click)="setValues(u.email_id,u.user_type)">Update</a>
                            
-                            <a *ngIf="u.user_type==='Volunteer' || u.user_type==='Member'" class="btn m-1" style="background-color: #f1ff00;" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            <a *ngIf="u.user_type==='Volunteer' || u.user_type==='Member'" class="btn m-1" (click)="Sendnotification(u.email_id)" style="background-color: #f1ff00;" role="button" aria-expanded="false" aria-controls="collapseExample">
                                 Notify
                               </a>
                           </p>
-                          <div class="collapse" id="collapseExample">
+                          <div class="collapse" id="collapseExample{{i}}">
                             <div class="card card-body">
                                 <div class="input-group input-group-sm mb-3">
                                     <span class="input-group-text" id="inputGroup-sizing-sm">Email Id</span>
