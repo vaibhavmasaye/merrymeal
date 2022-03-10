@@ -21,6 +21,25 @@ export class VolunteerRegistrationComponent implements OnInit {
   cr: any;
   submitted = false;
   error = '';
+  kitchen: any;
+  sponsor: any;
+  monday: any;
+  tuesday: any;
+  wednesday: any;
+  thursday: any;  
+  friday: any;
+  food: any;
+  prospects: any;
+  ProspectsData=[
+    {
+      name:'Outsource kitchen', value:'outsource-kitchen'
+    },
+    {
+      name:'Delivery', value:'delivery'
+    }
+  ]
+
+  public saveUsername:boolean;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -29,15 +48,44 @@ export class VolunteerRegistrationComponent implements OnInit {
     this.createAppForm = this.formBuilder.group({
       first_name:['', [Validators.required]],
       last_name: ['', [Validators.required]],
-     
       email_id: ['', [Validators.required]],
       password: ['', [Validators.required]],
       address: ['', [Validators.required]],
       contact_number: ['', [Validators.required]],
       postal_code: ['', [Validators.required]],
+      prospects: [''],
+
     });
   }
 
+  onChange(value: any){
+
+    this.food = value
+
+  }
+  // onChange(name: string, isChecked: boolean) {
+  //   const prospects = (this.createAppForm.controls.name as FormArray);
+
+  //   if (isChecked) {
+  //     prospects.push(new FormControl(name));
+  //   } else {
+  //      const index = prospects.controls.findIndex(x => x.value === name);
+  //      prospects.removeAt(index);
+  //   }
+  // }
+  
+  
+  // onCheckboxChange(e) {
+  //   const prospects: FormArray = this.createAppForm.get('prospects') as FormArray;
+   
+  //   if (e.target.checked) {
+  //     prospects.push(new FormControl(e.target.value));
+  //   } else {
+  //      const index = prospects.controls.findIndex(x => x.value === e.target.value);
+  //      prospects.removeAt(index);
+  //   }
+  // }
+  
   ngOnInit(): void {
   }
 
@@ -51,8 +99,10 @@ export class VolunteerRegistrationComponent implements OnInit {
       address: this.formData.address,
       contact_number: this.formData.contact_number,
       postal_code: this.formData.postal_code,
-      // kitchen: this.formData.kitchen,
-      // sponsor: this.formData.sponsor
+      prospects: this.food
+
+
+
     };
     this.submitted = true
     if (this.createAppForm.invalid) {

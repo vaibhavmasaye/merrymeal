@@ -23,7 +23,8 @@ const appRoutes: Routes = [
   },
   {
     path: 'display-menu',
-    component: DisplayMenuComponent
+    component: DisplayMenuComponent},
+    {
     path: 'partner-register',
     component: PartnerRegistrationComponent
   },

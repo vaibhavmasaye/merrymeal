@@ -25,6 +25,7 @@ export class PartnerRegistrationComponent implements OnInit {
   cr: any;
   submitted = false;
   error = '';
+  prospects: any;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -40,8 +41,7 @@ export class PartnerRegistrationComponent implements OnInit {
       address: ['', [Validators.required]],
       contact_number: ['', [Validators.required]],
       postal_code: ['', [Validators.required]],
-      kitchen: ['', [Validators.required]],
-      sponsor: ['', [Validators.required]]
+      prospects: [false],
 
 
     });
@@ -64,9 +64,8 @@ export class PartnerRegistrationComponent implements OnInit {
       address: this.formData.address,
       contact_number: this.formData.contact_number,
       postal_code: this.formData.postal_code,
-      kitchen: this.formData.kitchen,
-      sponsor: this.formData.sponsor
-    };
+      prospects: this.formData.prospects
+        };
     this.submitted = true
     if (this.createAppForm.invalid) {
       return;
