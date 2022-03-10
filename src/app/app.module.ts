@@ -24,7 +24,7 @@ import { VolunteerRegistrationComponent } from './volunteer-registration/volunte
     AdminDashboardComponent,
     AdminNavComponent,
     CreateMenuComponent,
-    DisplayMenuComponent
+    DisplayMenuComponent,
     PartnerRegistrationComponent,
     VolunteerRegistrationComponent
   ],

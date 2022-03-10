@@ -12,4 +12,7 @@ export class ServiceService {
   AddUser(data: any) {
     return this.http.post(this.Url+'/register', data);
   }
+  GetMenu(foodtype: any){
+    return this.http.get(this.Url+ '/getMenubytype/' + foodtype)
+  }
 }

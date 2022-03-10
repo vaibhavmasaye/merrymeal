@@ -24,6 +24,8 @@ const appRoutes: Routes = [
   {
     path: 'display-menu',
     component: DisplayMenuComponent
+  },
+  {
     path: 'partner-register',
     component: PartnerRegistrationComponent
   },
