@@ -17,6 +17,7 @@ export class CreateMenuComponent implements OnInit {
     wednesdayMenu: new FormControl('', [Validators.required]),
     thursdayMenu: new FormControl('', [Validators.required]),
     fridayMenu: new FormControl('', [Validators.required]),
+    foodtype: new FormControl('', [Validators.required]),
   });
 
   constructor(
@@ -45,6 +46,7 @@ export class CreateMenuComponent implements OnInit {
           friday:c.fridayMenu
           // donation_date:new Date().toISOString().slice(0,10)
           }
+          console.log(this.new_menu,'this.new_menu')
           this.MenuPlanningServiceService.AddMenu(this.new_menu).subscribe((res) => { 
             this.success = " Menu added successfully";
             console.log(this.success)
