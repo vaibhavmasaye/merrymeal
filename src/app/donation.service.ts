@@ -18,4 +18,16 @@ export class DonationService {
     return this.http.get(this.Url+'/listAlldonarinfo');
   }
 
+  ListUsers() {
+    return this.http.get(this.Url+'/listAlluser');
+  }
+
+  UpdateUsers(user_details:any) {
+    return this.http.post(this.Url+'/updateUserInfobyUid', user_details);
+  }
+
+  DeleteUsers(id:any) {
+    return this.http.delete(this.Url+'/deleteUser_Detail/'+id );
+  }
+
 }

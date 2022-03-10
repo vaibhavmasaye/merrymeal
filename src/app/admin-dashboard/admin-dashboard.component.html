@@ -24,7 +24,7 @@
           <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
             <div class="accordion-body" style="background: #000000; color: white;">
                 <div class="ex3">
-                    <div style=" color: white;border:  1px solid rgb(255, 255, 255); padding: 15px; border-radius: 5px 5px 30px 30px; margin-bottom: 15px; margin-right: 15px;">
+                    <div *ngFor="let u of users; let i=index" style=" color: white;border:  1px solid rgb(255, 255, 255); padding: 15px; border-radius: 5px 5px 30px 30px; margin-bottom: 15px; margin-right: 15px;">
                         <table class="table table-dark">
                             <thead>
                               <tr>
@@ -37,23 +37,24 @@
                             </thead>
                             <tbody>
                               <tr>
-                                <th>1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
+                                <th>{{u.id}}</th>
+                                <td>{{u.user_type}}</td>
+                                <td>{{u.first_name}} {{u.last_name}}</td>
+                                <td>{{u.email_id}}</td>
+                                <td>{{u.modified_date | date: 'dd-MM-yyyy' }}</td>
                               </tr>
                             </tbody>
                           </table>
                           <p>
                             <a>Action:</a>
-                            <a class="btn m-1" style="background-color: #f44336; color: white;"  role="button" aria-expanded="false" aria-controls="collapseExample" >
+                            <a class="btn m-1" style="background-color: #f44336; color: white;" (click)="deleteUser(u.id)"  role="button" aria-expanded="false" aria-controls="collapseExample" >
                               Delete
                             </a>
 
-                            <a class="btn m-1" style="background-color: #48e11a; color: white;"  data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Update</a>
+                            <a class="btn m-1" style="background-color: #48e11a; color: white;"  data-toggle="collapse"
+                             href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" (click)="setValues(u.email_id,u.user_type)">Update</a>
                            
-                            <a class="btn m-1" style="background-color: #f1ff00;" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            <a *ngIf="u.user_type==='Volunteer' || u.user_type==='Member'" class="btn m-1" style="background-color: #f1ff00;" role="button" aria-expanded="false" aria-controls="collapseExample">
                                 Notify
                               </a>
                           </p>
@@ -61,13 +62,14 @@
                             <div class="card card-body">
                                 <div class="input-group input-group-sm mb-3">
                                     <span class="input-group-text" id="inputGroup-sizing-sm">Email Id</span>
-                                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                                    <input type="text" class="form-control" [(ngModel)]="email_id" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                                   </div>
                                   <div class="input-group input-group-sm mb-3">
                                     <span class="input-group-text" id="inputGroup-sizing-sm">User Role</span>
-                                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                                    <input type="text" class="form-control"  [(ngModel)]="user_role" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                                   </div>
-                                  <button class="btn" style="background-color: #48e11a; color: white;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                  <button class="btn" style="background-color: #48e11a; color: white;" type="button" data-bs-toggle="collapse"
+                                   data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" (click)="updateUser(u.id,email_id,user_role)">
                                     Update
                                   </button>
                             </div>
@@ -87,7 +89,7 @@
         <div class="accordion-item">
           <h2 class="accordion-header" id="panelsStayOpen-headingOne">
             <button class="accordion-button" style="background: #0f1015 !important; color: white;" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-              Donar Information
+              Donor Information
             </button>
           </h2>
           <div id="panelsStayOpen-collapseOn" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
@@ -105,7 +107,7 @@
                 </thead>
                 <tbody>
                   <tr *ngFor="let d of donors; let i=index">
-                    <th scope="row">{{i}}</th>
+                    <th scope="row">{{i+1}}</th>
                     <td>{{d.first_name}} {{d.last_name}}</td>
                     <td>{{d.email_id}}</td>
                     <td>Rs. {{d.donation_amount}}</td>
