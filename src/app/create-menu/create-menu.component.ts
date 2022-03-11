@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
-import {MenuPlanningServiceService} from 'src/app/menu-planning-service.service';
+import { ServiceService } from '../service.service';
 
 @Component({
   selector: 'app-create-menu',
@@ -22,7 +22,7 @@ export class CreateMenuComponent implements OnInit {
 
   constructor(
     public router:Router,
-    private MenuPlanningServiceService: MenuPlanningServiceService,
+    private ServiceService: ServiceService,
   ) { }
 
   ngOnInit(): void {
@@ -47,7 +47,7 @@ export class CreateMenuComponent implements OnInit {
           // donation_date:new Date().toISOString().slice(0,10)
           }
           console.log(this.new_menu,'this.new_menu')
-          this.MenuPlanningServiceService.AddMenu(this.new_menu).subscribe((res) => { 
+          this.ServiceService.AddMenu(this.new_menu).subscribe((res) => { 
             this.success = " Menu added successfully";
             console.log(this.success)
             this.router.navigate(['/display-menu']);

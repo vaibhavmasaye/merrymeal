@@ -22,9 +22,9 @@ export class DisplayMenuComponent implements OnInit {
     this.foodType = 'veg'
     this.getMenu()
     this.typeArray = [
-      {name: 'Veg', value: 'veg'},
-      {name: 'Non-Veg', value: 'non-veg'},
-      {name: 'Nutritional', value: 'nutritional'}
+      { name: 'Veg', value: 'veg'},
+      { name: 'Non-Veg', value: 'non-veg'},
+      { name: 'Nutritional', value: 'nutritional'}
     ]
   }
 

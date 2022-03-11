@@ -1,56 +1,66 @@
-<div class="row radio_button">
-  <div class="col-3" *ngFor="let radio of typeArray" >
-    <label for="radio.value">{{radio.name}}</label>
-    <input type="radio"  name="foodtype" [value]="radio.value"  (change)="setFoodType(radio.value)"  />
-</div>
-  <!-- <div class="col-3">
+<body>
+  <div class="radio_button">
+    <div *ngFor="let radio of typeArray">
+      <label class="label" for="radio.value">{{ radio.name }}</label>
+      <input
+        type="radio"
+        name="foodtype"
+        [value]="radio.value"
+        (change)="setFoodType(radio.value)"
+      />
+    </div>
+    <!-- <div class="col-3">
   <label for="non-veg">Non-Veg</label>
   <input type="radio" id="foodtype" name="foodtype" value="non-veg" /></div>
   <div class="col-3">
   <label for="nutritional">Nutritional</label> 
   <input type="radio" id="foodtype" name="foodtype" value="nutritional" /></div> -->
 
-  <button>
-    <i class="material-icons">edit</i>
-  </button>
+    <button>
+      <i class="material-icons">edit</i>
+    </button>
 
-  <button>
-    <i class="material-icons">delete</i>
-  </button>
-</div>
+    <button>
+      <i class="material-icons">delete</i>
+    </button>
+  </div>
 
-<div class="week">
-  <table>
-    <thead>
-      <tr class="text-center">
-        <th>Monday</th>
-        <th>Tuesday</th>
-        <th>Wednesday</th>
-        <th>Thursday</th>
-        <th>Friday</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr  *ngFor="let item of menuData">
-        <td>
-          {{item.monday}}
-        </td>
-        <td>
-          {{item.tuesday}}
-        </td>
-        <td>
-          {{item.wednesday}}
-        </td>
-        <td>
-          {{item.thursday}}
-        </td>
-        <td>
-          {{item.friday}}
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <!-- <div class="monday">
+  <div class="week">
+    <table class="table table-hover">
+      <thead>
+        <tr class="text-center">
+          <th>Date</th>
+          <th>Service provider</th>
+          <th>Monday</th>
+          <th>Tuesday</th>
+          <th>Wednesday</th>
+          <th>Thursday</th>
+          <th>Friday</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of menuData">
+          <td>{{ item.created_date }}</td>
+          <td>{{ item.first_name }} {{ item.last_name }}</td>
+          <td>
+            {{ item.monday }}
+          </td>
+          <td>
+            {{ item.tuesday }}
+          </td>
+          <td>
+            {{ item.wednesday }}
+          </td>
+          <td>
+            {{ item.thursday }}
+          </td>
+          <td>
+            {{ item.friday }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- <div class="monday">
     <h3>Monday</h3>
     <p>Date</p>
     <hr />
@@ -71,4 +81,5 @@
     <h3>Friday</h3>
     <p>Date</p>
   </div> -->
-</div>
+  </div>
+</body>

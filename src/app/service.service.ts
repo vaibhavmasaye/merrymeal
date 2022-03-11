@@ -15,4 +15,8 @@ export class ServiceService {
   GetMenu(foodtype: any){
     return this.http.get(this.Url+ '/getMenubytype/' + foodtype)
   }
+  AddMenu(data:any){
+    return this.http.post(this.Url+'/AddMenu', data);
+  }
+
 }
