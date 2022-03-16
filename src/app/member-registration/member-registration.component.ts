@@ -117,7 +117,8 @@ export class MemberRegistrationComponent implements OnInit {
 
           this.HttpService.AddUser(this.data).subscribe((res) => { 
             console.log("Member Added Successfully")
-            // this.router.navigate(['/login']);
+            alert("Member Registered Successfully!\n\nClick ok to Login.")
+            this.router.navigate(['/login']);
           },
           (err: { message: string; }) => (this.error = err.message)
           );

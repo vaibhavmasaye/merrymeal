@@ -126,7 +126,8 @@ export class CaregiverRegistrationComponent implements OnInit {
 
           this.HttpService.AddUser(this.data).subscribe((res) => { 
             console.log("Caregiver Added Successfully")
-            // this.router.navigate(['/login']);
+            alert("Caregiver Registered!\n\nClick ok to Login.")
+            this.router.navigate(['/login']);
           },
           (err: { message: string; }) => (this.error = err.message)
           );

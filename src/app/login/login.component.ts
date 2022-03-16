@@ -53,7 +53,18 @@ export class LoginComponent implements OnInit {
         console.log("User Logged In Successfully")
         this.resData = res
         console.log("User Data", this.resData)
-        // this.router.navigate(['/login']);
+        if(this.resData.user_type == "Member") {
+          // this.router.navigate(['/login']);
+        }
+        if(this.resData.user_type == "Caregiver") {
+          // this.router.navigate(['/login']);
+        }
+        if(this.resData.user_type == "Partner") {
+          // this.router.navigate(['/login']);
+        }
+        if(this.resData.user_type == "Volunteer") {
+          // this.router.navigate(['/login']);
+        }
       },
       (err: { message: string; }) => (this.error = err.message)
     );
