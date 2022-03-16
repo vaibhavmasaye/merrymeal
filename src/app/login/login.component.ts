@@ -50,21 +50,27 @@ export class LoginComponent implements OnInit {
     }
     else {
       this.HttpService.loginUser(this.data).subscribe((res) => { 
-        console.log("User Logged In Successfully")
         this.resData = res
-        console.log("User Data", this.resData)
-        if(this.resData.user_type == "Member") {
-          // this.router.navigate(['/login']);
+        if(this.resData == null){
+          alert("Email or Password is incorrect, please enter correct credentails.")
+          console.log("User Loggin Unuccessful")
+        } else{  
+          console.log("User Logged In Successfully")
+          // console.log("User Data", this.resData)
+          if(this.resData.user_type == "Member") {
+            // this.router.navigate(['/login']);
+          }
+          if(this.resData.user_type == "Caregiver") {
+            // this.router.navigate(['/login']);
+          }
+          if(this.resData.user_type == "Partner") {
+            // this.router.navigate(['/login']);
+          }
+          if(this.resData.user_type == "Volunteer") {
+            // this.router.navigate(['/login']);
+          }
         }
-        if(this.resData.user_type == "Caregiver") {
-          // this.router.navigate(['/login']);
-        }
-        if(this.resData.user_type == "Partner") {
-          // this.router.navigate(['/login']);
-        }
-        if(this.resData.user_type == "Volunteer") {
-          // this.router.navigate(['/login']);
-        }
+        
       },
       (err: { message: string; }) => (this.error = err.message)
     );
