@@ -1,1 +1,181 @@
-<p>member-registration works!</p>
+<body style="background-color: #999999;">
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="login100-more" style="background-image: url('../../assets/images/health-2.jpg');">
+				<!-- <h1 class="login100-form-title p-b-59 " style="position: absolute; top: 19em; left: 6em;">Merry Meals</h1> -->
+			</div>
+
+			<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
+				<form [formGroup]="createMemberForm"  (ngSubmit)="Add_Member(createMemberForm)" class="login100-form validate-form">
+					<span style="text-align: center;" class="login100-form-title p-b-59">
+						Become a Member with Merry Meals!
+					</span>
+
+					<div class="wrap-input100 validate-input" data-validate="First Name is required">
+						<span class="label-input100">First Name</span>
+						<input class="input100" type="text" name="first_name" formControlName="first_name" placeholder="Enter First Name">
+						<span class="focus-input100"></span>
+						<div *ngIf="f['first_name'].errors && submitted" class="alert alert-danger">
+							<div *ngIf="f['first_name'].errors['required']">First name is required.</div>
+						</div>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Member Last Name is required">
+						<span class="label-input100">Last Name</span>
+						<input class="input100" type="text" name="last_name" formControlName="last_name" placeholder="Enter Last Name">
+						<span class="focus-input100"></span>
+						<div *ngIf="f['last_name'].errors && submitted" class="alert alert-danger">
+							<div *ngIf="f['last_name'].errors['required']">Last name is required.</div>
+						</div>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Date Of Birth is required">
+						<span class="label-input100">Date of Birth</span>
+						<input class="input100" type="date" name="dob" formControlName="dob" placeholder="Enter DOB">
+						<span class="focus-input100"></span>
+						<div *ngIf="f['dob'].errors && submitted" class="alert alert-danger">
+							<div *ngIf="f['dob'].errors['required']">Date Of Birth is required.</div>
+						</div>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Gender is required">
+						<span class="label-input100">Gender</span>
+						<select formControlName="gender" class="input100" style="border: 0; border-bottom: 0px solid #555555 !important;">
+							<option value="male">Male</option>
+							<option value="female">Female</option>
+							<option value="other">Other</option>
+						</select>
+						<span class="focus-input100"></span>
+						<div *ngIf="f['gender'].errors && submitted" class="alert alert-danger">
+							<div *ngIf="f['gender'].errors['required']">Gender is required.</div>
+						</div>
+					</div>
+
+					<!-- <div class="wrap-input100 validate-input" data-validate="Gender is required">
+						<span class="label-input100">Gender</span>
+						<input class="input100" type="text" name="gender" formControlName="gender" placeholder="Select Gender">
+						<span class="focus-input100"></span>
+					</div> -->
+
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<span class="label-input100">Email</span>
+						<input class="input100" type="text" name="email_id" formControlName="email_id" placeholder="Email addess">
+						<span class="focus-input100"></span>
+						<div *ngIf="f['email_id'].errors && submitted" class="alert alert-danger">
+							<div *ngIf="f['email_id'].errors['required']">Email is required.</div>
+							<div *ngIf="f['email_id'].errors['email']">Valid email is required: ex@abc.xyz</div>
+						</div>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Contact Number is required">
+						<span class="label-input100">Contact Number</span>
+						<input class="input100" type="number" name="contact_number" formControlName="contact_number" placeholder="Enter Contact Number">
+						<span class="focus-input100"></span>
+						<div *ngIf="f['contact_number'].errors && submitted" class="alert alert-danger">
+							<div *ngIf="f['contact_number'].errors['required']">Contact Number is required.</div>
+							<div *ngIf="f['contact_number'].errors['minLength']">Contact Number should be 10 character</div>
+							<div *ngIf="f['contact_number'].errors['maxLength']">Contact Number should only be 10 character</div>
+						</div>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Address is required">
+						<span class="label-input100">Address</span>
+						<input class="input100" type="text" name="address" formControlName="address" placeholder="Enter Address">
+						<span class="focus-input100"></span>
+						<div *ngIf="f['address'].errors && submitted" class="alert alert-danger">
+							<div *ngIf="f['address'].errors['required']">Address is required.</div>
+						</div>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Postal Code is requir`ed">
+						<span class="label-input100">Postal Code</span>
+						<input class="input100" type="number" name="postal_code" formControlName="postal_code" placeholder="Enter Postal Code">
+						<span class="focus-input100"></span>
+						<div *ngIf="f['postal_code'].errors && submitted" class="alert alert-danger">
+							<div *ngIf="f['postal_code'].errors['required']">Postal Code required.</div>
+							<div *ngIf="f['postal_code'].errors['minlength']">Postal Code should be 6 character.</div>
+                          	<div *ngIf="f['postal_code'].errors['maxlength']">Postal Code should only be 6 character.</div>
+						</div>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Address is required">
+						<span class="label-input100">Reason To Join Us</span>
+						<input class="input100" type="text" name="reason" formControlName="reason" placeholder="Reason To Join Us">
+						<span class="focus-input100"></span>
+						<div *ngIf="f['reason'].errors && submitted" class="alert alert-danger">
+							<div *ngIf="f['reason'].errors['required']">Reason is required.</div>
+						</div>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Postal Code is requir`ed">
+						<!-- <span class="label-input100">Medical Certificate</span> -->
+						<!-- <input class="input100" type="number" name="certificate" formControlName="certificate" placeholder="Medical Certificate"> -->
+						<!-- <span class="focus-input100"></span> -->
+						<div class="upload-btn-wrapper" style="width: 100%;">
+							<button class="btn" style="width: 100%;">Upload Medical/Age Proof</button>
+							<input type="file" formControlName="certificate" name="myfile" (change)="onFileSelected($event,'passport')" />
+						</div>
+						<div *ngIf="f['certificate'].errors && submitted" class="alert alert-danger">
+							<div *ngIf="f['certificate'].errors['required']">File upload is required.</div>
+						</div>
+						<span class="label-input100" *ngIf="fileName">File Name: {{fileName}}</span>
+					</div>
+
+					<!-- <input type="file" class="custom-file-input" id="inputGroupFile01" (change)="onFileSelected($event,'passport')">
+                    <label class="custom-file-label" for="inputGroupFile01" *ngIf="!fileName" >Choose file</label>
+                    <label class="custom-file-label" for="inputGroupFile01"*ngIf="fileName" >{{fileName}}</label> -->
+
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						<span class="label-input100">Password</span>
+						<input class="input100" type="password" name="password" formControlName="password"  placeholder="*************">
+						<span class="focus-input100"></span>
+						<div *ngIf="f['password'].errors && submitted" class="alert alert-danger">
+							<div *ngIf="f['password'].errors['required']">Password is required.</div>
+						</div>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						<span class="label-input100">Confirm Password</span>
+						<input class="input100" type="password" name="cpassword" formControlName="cpassword"  placeholder="*************">
+						<span class="focus-input100"></span>
+						<div *ngIf="f['cpassword'].errors && submitted" class="alert alert-danger">
+							<div *ngIf="f['cpassword'].errors['required']">Confirm Password is required.</div>
+						</div>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<input type="submit" value="Sign Up" style="background-color: springgreen !important; font-weight: bold;" class="login100-form-btn">
+								
+						</div>
+
+						<!-- <a href="#" class="dis-block txt3 hov1 p-r-30 p-t-10 p-b-10 p-l-30">
+							Sign in
+							<i class="fa fa-long-arrow-right m-l-5"></i>
+						</a> -->
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+</body>

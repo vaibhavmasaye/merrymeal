@@ -12,4 +12,13 @@ export class ServiceService {
   AddUser(data: any) {
     return this.http.post(this.Url+'/register', data);
   }
+
+  loginUser(data: any) {
+    return this.http.post(this.Url+'/login', data);
+  }
+
+  uploadMedicalCertificate(data: any){
+    return this.http.post(this.Url+'/MedicalCertificateupload', data)
+  }
+
 }

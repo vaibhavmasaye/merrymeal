@@ -15,6 +15,8 @@ import { PartnerRegistrationComponent } from './partner-registration/partner-reg
 import { VolunteerRegistrationComponent } from './volunteer-registration/volunteer-registration.component';
 import { MemberRegistrationComponent } from './member-registration/member-registration.component';
 import { CaregiverRegistrationComponent } from './caregiver-registration/caregiver-registration.component';
+import { LoginComponent } from './login/login.component';
+import { FoodSafetyComponent } from './food-safety/food-safety.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { CaregiverRegistrationComponent } from './caregiver-registration/caregiv
     PartnerRegistrationComponent,
     VolunteerRegistrationComponent,
     MemberRegistrationComponent,
-    CaregiverRegistrationComponent
+    CaregiverRegistrationComponent,
+    LoginComponent,
+    FoodSafetyComponent
   ],
   imports: [
     BrowserModule,
