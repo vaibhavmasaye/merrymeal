@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DonationService } from 'src/app/donation.service';
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-admin-dashboard',
   templateUrl: './admin-dashboard.component.html',
@@ -11,9 +13,11 @@ export class AdminDashboardComponent implements OnInit {
   users:any
   email_id:any
   user_role:any
+  success = '';
   // donors= [{id:1, first_name:"Testing", last_name:"Testing", email_id:"Test@gmail.com", donation_amount:"1000",donation_date:"01-01-1010"}]
   constructor(
     private DonationService: DonationService,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -57,6 +61,8 @@ export class AdminDashboardComponent implements OnInit {
     formData.append('user_type', user_role);
     this.DonationService.UpdateUsers(formData).subscribe((res) => { 
         this.getUsersList();
+        this.success = 'User Detail Update!';
+      this.toastr.success(this.success, '');
         console.log("User Update Status: OK!");
       },
       (err) => {
@@ -69,6 +75,8 @@ export class AdminDashboardComponent implements OnInit {
   deleteUser(id:any) {
     this.DonationService.DeleteUsers(id).subscribe((res) => { 
         this.getUsersList();
+        this.success = 'User Deleted!';
+      this.toastr.success(this.success, '');
         console.log("User Delete Status: OK!");
       },
       (err) => {
@@ -81,6 +89,8 @@ export class AdminDashboardComponent implements OnInit {
   Sendnotification(email_id:any) {
     this.DonationService.Sendnotification({email_id:email_id}).subscribe((res) => { 
         this.getUsersList();
+        this.success = 'User notification send!';
+      this.toastr.success(this.success, '');
         console.log("User notification send: OK!");
       },
       (err) => {

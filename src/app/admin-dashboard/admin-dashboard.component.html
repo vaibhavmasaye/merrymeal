@@ -17,14 +17,16 @@
     <div class="accordion" id="accordionExample">
         <div class="accordion-item" >
           <h2 class="accordion-header" id="headingOne" >
-            <button class="accordion-button" style="background: #0f1015 !important; color: white;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <button class="accordion-button" style="background: #0f1015 !important; color: white;" type="button" data-bs-toggle="collapse"
+             data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
               User Information
             </button>
           </h2>
           <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
             <div class="accordion-body" style="background: #000000; color: white;">
                 <div class="ex3">
-                    <div *ngFor="let u of users; let i=index" style=" color: white;border:  1px solid rgb(255, 255, 255); padding: 15px; border-radius: 5px 5px 30px 30px; margin-bottom: 15px; margin-right: 15px;">
+                    <div *ngFor="let u of users; let i=index"
+                     style=" color: white;border:  1px solid rgb(255, 255, 255); padding: 15px; border-radius: 5px 5px 30px 30px; margin-bottom: 15px; margin-right: 15px;">
                         <table class="table table-dark">
                             <thead>
                               <tr>
@@ -54,7 +56,8 @@
                             <a class="btn m-1" style="background-color: #48e11a; color: white;"  data-toggle="collapse"
                              href="#collapseExample{{i}}" role="button" aria-expanded="false" aria-controls="collapseExample" (click)="setValues(u.email_id,u.user_type)">Update</a>
                            
-                            <a *ngIf="u.user_type==='Volunteer' || u.user_type==='Member'" class="btn m-1" (click)="Sendnotification(u.email_id)" style="background-color: #f1ff00;" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            <a *ngIf="u.user_type==='Volunteer' || u.user_type==='Member'" class="btn m-1" (click)="Sendnotification(u.email_id)" 
+                            style="background-color: #f1ff00;" role="button" aria-expanded="false" aria-controls="collapseExample">
                                 Notify
                               </a>
                           </p>
@@ -88,7 +91,8 @@
       <div class="accordion" id="accordionPanelsStayOpenExample">
         <div class="accordion-item">
           <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-            <button class="accordion-button" style="background: #0f1015 !important; color: white;" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+            <button class="accordion-button" style="background: #0f1015 !important; color: white;" type="button" data-bs-toggle="collapse" 
+            data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
               Donor Information
             </button>
           </h2>
