@@ -13,6 +13,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TransationInfoComponent } from './transation-info/transation-info.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AdminNavComponent } from './admin-nav/admin-nav.component';
+import { CreateMenuComponent } from './create-menu/create-menu.component';
+import { DisplayMenuComponent } from './display-menu/display-menu.component';
+import { PartnerRegistrationComponent } from './partner-registration/partner-registration.component';
+import { VolunteerRegistrationComponent } from './volunteer-registration/volunteer-registration.component';
+import { DeliveryComponentComponent } from './delivery-component/delivery-component.component';
 
 
 @NgModule({
@@ -21,7 +26,12 @@ import { AdminNavComponent } from './admin-nav/admin-nav.component';
     DonarInfoComponent,
     TransationInfoComponent,
     AdminDashboardComponent,
-    AdminNavComponent
+    AdminNavComponent,
+    CreateMenuComponent,
+    DisplayMenuComponent,
+    PartnerRegistrationComponent,
+    VolunteerRegistrationComponent,
+    DeliveryComponentComponent
   ],
   imports: [
     BrowserModule,
