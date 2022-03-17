@@ -1,15 +1,3 @@
-body {
-  color: #000;
-  overflow-x: hidden;
-  height: 100%;
-  background-image: url("/assets/images/health-2.jpg");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-}
-.header_title {
-  text-align: center;
-  font-weight: bolder;
-}
 .body::-webkit-scrollbar {
   display: none;
 }
@@ -87,5 +75,30 @@ button:focus {
   outline-width: 0;
 }
 .header {
-  color: white;
+  display: flex;
+  text-align: center;
+  height: 40vh;
+}
+.header_title {
+  flex: 0.5;
+  line-height: 1.5;
+  font-weight: bolder;
+}
+.header_para {
+  font-size: 25px;
+  font-weight: 400;
+  text-align: justify;
+}
+.image_svg {
+  flex: 0.5;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.container-fluid {
+  background-image: linear-gradient(white, lightgreen);
+}
+.submit {
+  display: flex;
+  justify-content: center;
 }
