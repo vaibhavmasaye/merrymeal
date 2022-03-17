@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 import { ServiceService } from '../service.service';
 
 @Component({
@@ -40,6 +41,7 @@ export class VolunteerRegistrationComponent implements OnInit {
   ]
 
   public saveUsername:boolean;
+  api_message: "";
 
   constructor(
     private formBuilder: FormBuilder,
@@ -89,6 +91,8 @@ export class VolunteerRegistrationComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  get f() { return this.createAppForm.controls; }
+
   Add_User(form: any){
     this.formData = form.value
     this.data = {
@@ -111,6 +115,13 @@ export class VolunteerRegistrationComponent implements OnInit {
     else {
       this.HttpService.AddUser(this.data).subscribe((res) => { 
         console.log("Donor Added Successfully")
+        setTimeout(()=>{ 
+          Swal.fire(
+            'Your Details have been registered sucessfully',
+            this.api_message,
+            'success'
+          )
+        }, 0);
         // this.router.navigate(['/login']);
       },
       (err: { message: string; }) => (this.error = err.message)
