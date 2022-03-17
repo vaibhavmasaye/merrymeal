@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ServiceService } from '../service.service';
+import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-partner-registration',
   templateUrl: './partner-registration.component.html',
@@ -25,6 +27,8 @@ export class PartnerRegistrationComponent implements OnInit {
   cr: any;
   submitted = false;
   error = '';
+  prospects: any;
+  api_message: "";
 
   constructor(
     private formBuilder: FormBuilder,
@@ -40,8 +44,7 @@ export class PartnerRegistrationComponent implements OnInit {
       address: ['', [Validators.required]],
       contact_number: ['', [Validators.required]],
       postal_code: ['', [Validators.required]],
-      kitchen: ['', [Validators.required]],
-      sponsor: ['', [Validators.required]]
+      prospects: [false],
 
 
     });
@@ -64,9 +67,8 @@ export class PartnerRegistrationComponent implements OnInit {
       address: this.formData.address,
       contact_number: this.formData.contact_number,
       postal_code: this.formData.postal_code,
-      kitchen: this.formData.kitchen,
-      sponsor: this.formData.sponsor
-    };
+      prospects: this.formData.prospects
+        };
     this.submitted = true
     if (this.createAppForm.invalid) {
       return;
@@ -74,10 +76,20 @@ export class PartnerRegistrationComponent implements OnInit {
     else {
       this.HttpService.AddUser(this.data).subscribe((res) => { 
         // console.log(this.data, 'this.data')
+        setTimeout(()=>{ 
+          Swal.fire(
+            'Your Details have been registered sucessfully',
+            this.api_message,
+            'success'
+          )
+        }, 0);
+        
         // this.router.navigate(['/login']);
       },
       (err: { message: string; }) => (this.error = err.message)
     );
   }
 } 
+
+
 }
