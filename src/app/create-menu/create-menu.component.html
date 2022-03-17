@@ -1,0 +1,237 @@
+<body oncontextmenu="false" class="snippet-body">
+  <!-- <div class="header">
+    <h1 class="header_title">Create MENU</h1>
+
+    <p class="header_para">Select type of food you want to provide</p>
+  </div> -->
+  <div class="header">
+    <h3 class="header_title">
+      <span style="color: rgb(255, 107, 8); font-weight: bolder"
+        >Some waste food, to show that they are rich,</span
+      ><br />
+      Few donate food , Because they have a rich heart !<br />
+
+      <span class="header_para">
+        You can provide the menu below, select the type of food you want to
+        provide and help people</span
+      >
+    </h3>
+
+    <img class="image_svg" src="/assets/images/create_menu_header.jpg" />
+  </div>
+  <div class="container-fluid mx-auto">
+    <div class="row d-flex justify-content-center">
+      <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+        <div class="card">
+          <form
+            class="form-card"
+            [formGroup]="createMenu_form"
+            onsubmit="event.preventDefault()"
+          >
+            <div class="radio_button">
+              <label for="veg">Veg</label>
+              <input
+                type="radio"
+                id="foodtype"
+                name="foodtype"
+                formControlName="foodtype"
+                value="veg"
+                checked="checked"
+              />
+              <br />
+              <label for="non-veg">Non-Veg</label>
+              <input
+                type="radio"
+                id="foodtype"
+                name="foodtype"
+                value="non-veg"
+                formControlName="foodtype"
+              />
+
+              <br />
+              <label for="nutritional">Nutritional</label>
+              <input
+                type="radio"
+                id="foodtype"
+                name="foodtype"
+                value="nutritional"
+                formControlName="foodtype"
+              />
+            </div>
+            <hr />
+            <div class="row justify-content-between text-left">
+              <div class="form-group col-sm-6 flex-column d-flex">
+                <label class="form-control-label px-3">First name </label>
+                <input
+                  type="text"
+                  id="fname"
+                  name="fname"
+                  formControlName="fname"
+                  placeholder="Enter your first name"
+                />
+                <div
+                  *ngIf="u['fname'].touched && u['fname'].invalid"
+                  class="alert alert-danger"
+                >
+                  <div
+                    *ngIf="u['fname'].errors && u['fname'].errors['required']"
+                  >
+                    First Name is required.
+                  </div>
+                </div>
+              </div>
+              <div class="form-group col-sm-6 flex-column d-flex">
+                <label class="form-control-label px-3">Last name </label>
+                <input
+                  type="text"
+                  id="lname"
+                  name="lname"
+                  formControlName="lname"
+                  placeholder="Enter your last name"
+                />
+                <div
+                  *ngIf="u['lname'].touched && u['lname'].invalid"
+                  class="alert alert-danger"
+                >
+                  <div
+                    *ngIf="u['lname'].errors && u['lname'].errors['required']"
+                  >
+                    Last Name is required.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row justify-content-between text-left">
+              <div class="form-group col-12 flex-column d-flex">
+                <label class="form-control-label px-3">Monday Menu </label>
+                <input
+                  type="text"
+                  name="mondayMenu"
+                  formControlName="mondayMenu"
+                  placeholder="Mention one item"
+                />
+                <div
+                  *ngIf="u['mondayMenu'].touched && u['mondayMenu'].invalid"
+                  class="alert alert-danger"
+                >
+                  <div
+                    *ngIf="
+                      u['mondayMenu'].errors &&
+                      u['mondayMenu'].errors['required']
+                    "
+                  >
+                    Please enter menu
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group col-12 flex-column d-flex">
+                <label class="form-control-label px-3">Tuesday Menu</label>
+                <input
+                  type="text"
+                  name="tuesdayMenu"
+                  formControlName="tuesdayMenu"
+                  placeholder="Mention one item"
+                />
+                <div
+                  *ngIf="u['tuesdayMenu'].touched && u['tuesdayMenu'].invalid"
+                  class="alert alert-danger"
+                >
+                  <div
+                    *ngIf="
+                      u['tuesdayMenu'].errors &&
+                      u['tuesdayMenu'].errors['required']
+                    "
+                  >
+                    Please enter menu
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group col-12 flex-column d-flex">
+                <label class="form-control-label px-3">Wednesday Menu</label>
+                <input
+                  type="text"
+                  id="ans"
+                  name="ans"
+                  formControlName="wednesdayMenu"
+                  placeholder="Mention one item"
+                />
+                <div
+                  *ngIf="
+                    u['wednesdayMenu'].touched && u['wednesdayMenu'].invalid
+                  "
+                  class="alert alert-danger"
+                >
+                  <div
+                    *ngIf="
+                      u['wednesdayMenu'].errors &&
+                      u['wednesdayMenu'].errors['required']
+                    "
+                  >
+                    Please enter menu
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group col-12 flex-column d-flex">
+                <label class="form-control-label px-3">Thursday Menu</label>
+                <input
+                  type="text"
+                  id="ans"
+                  name="ans"
+                  formControlName="thursdayMenu"
+                  placeholder="Mention one item"
+                />
+                <div
+                  *ngIf="u['thursdayMenu'].touched && u['thursdayMenu'].invalid"
+                  class="alert alert-danger"
+                >
+                  <div
+                    *ngIf="
+                      u['thursdayMenu'].errors &&
+                      u['thursdayMenu'].errors['required']
+                    "
+                  >
+                    Please enter menu
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group col-12 flex-column d-flex">
+                <label class="form-control-label px-3">Friday Menu</label>
+                <input
+                  type="text"
+                  id="ans"
+                  name="ans"
+                  formControlName="fridayMenu"
+                  placeholder="Mention one item"
+                />
+                <div
+                  *ngIf="u['fridayMenu'].touched && u['fridayMenu'].invalid"
+                  class="alert alert-danger"
+                >
+                  <div
+                    *ngIf="
+                      u['fridayMenu'].errors &&
+                      u['fridayMenu'].errors['required']
+                    "
+                  >
+                    Please enter menu
+                  </div>
+                </div>
+              </div>
+              <div class="submit" *ngIf="id" >
+                <button class="btn btn-success submit" type="submit" (click)="editMenu()" >Submit</button>
+              </div>
+              <div class="submit" *ngIf="!id" >
+                <button class="btn btn-success submit" type="submit" (click)="createMenu()" >Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

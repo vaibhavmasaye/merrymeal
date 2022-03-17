@@ -1,0 +1,104 @@
+.body::-webkit-scrollbar {
+  display: none;
+}
+.card_heading {
+  font-size: 30px;
+}
+.card_para {
+  font-size: 15px;
+}
+.radio_button {
+  display: flex;
+  justify-content: space-between;
+}
+.radio_button > label {
+  font-size: larger;
+}
+.radio_button > input {
+  margin-right: 100px;
+}
+
+.card {
+  padding: 30px 40px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  border: none !important;
+  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2);
+}
+
+.blue-text {
+  color: #00bcd4;
+}
+
+.form-control-label {
+  margin-bottom: 0;
+}
+
+input,
+textarea,
+button {
+  padding: 8px 15px;
+  border-radius: 5px !important;
+  margin: 5px 0px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  font-size: 18px !important;
+  font-weight: 300;
+}
+
+input:focus,
+textarea:focus {
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border: 1px solid #00bcd4;
+  outline-width: 0;
+  font-weight: 400;
+}
+
+.btn-block {
+  text-transform: uppercase;
+  font-size: 15px !important;
+  font-weight: 400;
+  height: 43px;
+  cursor: pointer;
+}
+
+.btn-block:hover {
+  color: #fff !important;
+}
+
+button:focus {
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  outline-width: 0;
+}
+.header {
+  display: flex;
+  text-align: center;
+  height: 40vh;
+}
+.header_title {
+  flex: 0.5;
+  line-height: 1.5;
+  font-weight: bolder;
+}
+.header_para {
+  font-size: 25px;
+  font-weight: 400;
+  text-align: justify;
+}
+.image_svg {
+  flex: 0.5;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.container-fluid {
+  background-image: linear-gradient(white, lightgreen);
+}
+.submit {
+  display: flex;
+  justify-content: center;
+}

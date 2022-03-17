@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DonationService } from 'src/app/donation.service';
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-admin-dashboard',
   templateUrl: './admin-dashboard.component.html',
@@ -8,13 +10,19 @@ import { DonationService } from 'src/app/donation.service';
 export class AdminDashboardComponent implements OnInit {
   
   donors:any
+  users:any
+  email_id:any
+  user_role:any
+  success = '';
   // donors= [{id:1, first_name:"Testing", last_name:"Testing", email_id:"Test@gmail.com", donation_amount:"1000",donation_date:"01-01-1010"}]
   constructor(
     private DonationService: DonationService,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
     this.getDonorsList()
+    this.getUsersList()
   }
 
   getDonorsList() {
@@ -28,5 +36,70 @@ export class AdminDashboardComponent implements OnInit {
     );
     
   }
+
+  getUsersList() {
+    this.DonationService.ListUsers().subscribe((res) => { 
+        this.users = res;
+        console.log("List of Users: " + this.users);
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+    
+  }
+
+  setValues(email_id:any,user_type:any){
+    this.email_id=email_id
+    this.user_role=user_type
+  }
+
+  updateUser(id:any,email_id:any,user_role:any) {
+    const formData = new FormData();
+    formData.append('id', id);
+    formData.append('email_id', email_id);
+    formData.append('user_type', user_role);
+    this.DonationService.UpdateUsers(formData).subscribe((res) => { 
+        this.getUsersList();
+        this.success = 'User Detail Update!';
+      this.toastr.success(this.success, '');
+        console.log("User Update Status: OK!");
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+    
+  }
+
+  deleteUser(id:any) {
+    this.DonationService.DeleteUsers(id).subscribe((res) => { 
+        this.getUsersList();
+        this.success = 'User Deleted!';
+      this.toastr.success(this.success, '');
+        console.log("User Delete Status: OK!");
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+    
+  }
+
+  Sendnotification(email_id:any) {
+    this.DonationService.Sendnotification({email_id:email_id}).subscribe((res) => { 
+        this.getUsersList();
+        this.success = 'User notification send!';
+      this.toastr.success(this.success, '');
+        console.log("User notification send: OK!");
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+    
+  }
+
+  
 
 }

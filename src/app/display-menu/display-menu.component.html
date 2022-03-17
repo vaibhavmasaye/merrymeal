@@ -1,0 +1,66 @@
+<body>
+  <div class="radio_button">
+    <div *ngFor="let radio of typeArray">
+      <label class="label" for="radio.value">{{ radio.name }}</label>
+      <input
+        class="input"
+        type="radio"
+        name="foodtype"
+        [value]="radio.value"
+        [defaultChecked]="radio.checked"
+        (change)="setFoodType(radio.value)"
+      />
+    </div>  
+    <button>
+      <i class="material-icons">edit</i>
+    </button>
+
+    <button>
+      <i class="material-icons">delete</i>
+    </button>
+  </div>
+
+  <div class="week">
+    <table class="table table-hover">
+      <thead>
+        <tr class="text-center">
+          <th>Date</th>
+          <th>Service provider</th>
+          <th>Monday</th>
+          <th>Tuesday</th>
+          <th>Wednesday</th>
+          <th>Thursday</th>
+          <th>Friday</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of menuData">
+          <td>{{ item.created_date  | date : "short"  }}</td>
+          <td>{{ item.first_name }} {{ item.last_name }}</td>
+          <td>
+            {{ item.monday }}
+          </td>
+          <td>
+            {{ item.tuesday }}
+          </td>
+          <td>
+            {{ item.wednesday }}
+          </td>
+          <td>
+            {{ item.thursday }}
+          </td>
+          <td>
+            {{ item.friday }}
+          </td>
+          <td>
+            <button (click)="deleteMenu(item.id)"  ><i class="material-icons">delete</i></button>
+             &nbsp;
+            <button [routerLink]="['/edit-menu/', item.id]" ><i class="material-icons">edit</i></button>
+            
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
