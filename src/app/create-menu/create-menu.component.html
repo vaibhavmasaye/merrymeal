@@ -26,7 +26,6 @@
           <form
             class="form-card"
             [formGroup]="createMenu_form"
-            (ngSubmit)="createMenu()"
             onsubmit="event.preventDefault()"
           >
             <div class="radio_button">
@@ -223,10 +222,11 @@
                   </div>
                 </div>
               </div>
-              <div class="submit">
-                <button class="btn btn-success submit" type="submit">
-                  Submit
-                </button>
+              <div class="submit" *ngIf="id" >
+                <button class="btn btn-success submit" type="submit" (click)="editMenu()" >Submit</button>
+              </div>
+              <div class="submit" *ngIf="!id" >
+                <button class="btn btn-success submit" type="submit" (click)="createMenu()" >Submit</button>
               </div>
             </div>
           </form>

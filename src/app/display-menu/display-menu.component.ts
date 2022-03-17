@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceService } from '../service.service';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 
 @Component({
@@ -13,19 +14,20 @@ export class DisplayMenuComponent implements OnInit {
     private HttpService:ServiceService,
   ) { }
 
-  foodType: any
+  foodType = 'veg'
   menuData: any
   typeArray: any
 
 
   ngOnInit(): void {
-    this.foodType = 'veg'
-    this.getMenu()
+    // this.foodType = 'veg'
+    // this.getMenu()
     this.typeArray = [
-      { name: 'Veg', value: 'veg'},
-      { name: 'Non-Veg', value: 'non-veg'},
-      { name: 'Nutritional', value: 'nutritional'}
+      { name: 'Veg', value: 'veg', checked: true},
+      { name: 'Non-Veg', value: 'non-veg', checked: false},
+      { name: 'Nutritional', value: 'nutritional', checked: false}
     ]
+    this.setFoodType('veg');
   }
 
   setFoodType(value: any){
@@ -42,6 +44,16 @@ export class DisplayMenuComponent implements OnInit {
       (err: { message: string; }) => console.log(err.message)
       );
   }
+
+  deleteMenu(id : any){
+    console.log('id========', id)
+    this.HttpService.DeleteMenu(id).subscribe((res) => {
+      console.log('res')
+      this.getMenu()
+    },
+    (err: {message: string})=> console.log(err.message))
+  }
+
 
 
 }
