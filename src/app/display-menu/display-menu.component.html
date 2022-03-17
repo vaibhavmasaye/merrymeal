@@ -6,16 +6,10 @@
         type="radio"
         name="foodtype"
         [value]="radio.value"
+        [defaultChecked]="radio.checked"
         (change)="setFoodType(radio.value)"
       />
-    </div>
-    <!-- <div class="col-3">
-  <label for="non-veg">Non-Veg</label>
-  <input type="radio" id="foodtype" name="foodtype" value="non-veg" /></div>
-  <div class="col-3">
-  <label for="nutritional">Nutritional</label> 
-  <input type="radio" id="foodtype" name="foodtype" value="nutritional" /></div> -->
-
+    </div>  
     <button>
       <i class="material-icons">edit</i>
     </button>
@@ -36,11 +30,12 @@
           <th>Wednesday</th>
           <th>Thursday</th>
           <th>Friday</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let item of menuData">
-          <td>{{ item.created_date }}</td>
+          <td>{{ item.created_date  | date : "short"  }}</td>
           <td>{{ item.first_name }} {{ item.last_name }}</td>
           <td>
             {{ item.monday }}
@@ -57,29 +52,14 @@
           <td>
             {{ item.friday }}
           </td>
+          <td>
+            <button (click)="deleteMenu(item.id)"  ><i class="material-icons">delete</i></button>
+             &nbsp;
+            <button [routerLink]="['/edit-menu/', item.id]" ><i class="material-icons">edit</i></button>
+            
+          </td>
         </tr>
       </tbody>
     </table>
-    <!-- <div class="monday">
-    <h3>Monday</h3>
-    <p>Date</p>
-    <hr />
-  </div>
-  <div class="tuesday">
-    <h3>Tuesday</h3>
-    <p>Date</p>
-  </div>
-  <div class="wednesday">
-    <h3>Wednesday</h3>
-    <p>Date</p>
-  </div>
-  <div class="thursday">
-    <h3>Thursday</h3>
-    <p>Date</p>
-  </div>
-  <div class="friday">
-    <h3>Friday</h3>
-    <p>Date</p>
-  </div> -->
   </div>
 </body>
