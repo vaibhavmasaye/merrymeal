@@ -17,6 +17,10 @@ import { CreateMenuComponent } from './create-menu/create-menu.component';
 import { DisplayMenuComponent } from './display-menu/display-menu.component';
 import { PartnerRegistrationComponent } from './partner-registration/partner-registration.component';
 import { VolunteerRegistrationComponent } from './volunteer-registration/volunteer-registration.component';
+import { MemberRegistrationComponent } from './member-registration/member-registration.component';
+import { CaregiverRegistrationComponent } from './caregiver-registration/caregiver-registration.component';
+import { LoginComponent } from './login/login.component';
+import { FoodSafetyComponent } from './food-safety/food-safety.component';
 import { DeliveryComponentComponent } from './delivery-component/delivery-component.component';
 
 
@@ -31,6 +35,10 @@ import { DeliveryComponentComponent } from './delivery-component/delivery-compon
     DisplayMenuComponent,
     PartnerRegistrationComponent,
     VolunteerRegistrationComponent,
+    MemberRegistrationComponent,
+    CaregiverRegistrationComponent,
+    LoginComponent,
+    FoodSafetyComponent
     DeliveryComponentComponent
   ],
   imports: [

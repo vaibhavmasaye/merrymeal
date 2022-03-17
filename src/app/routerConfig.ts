@@ -5,6 +5,10 @@ import { TransationInfoComponent } from './transation-info/transation-info.compo
 import {CreateMenuComponent} from './create-menu/create-menu.component';
 import {DisplayMenuComponent} from './display-menu/display-menu.component';
 import { VolunteerRegistrationComponent } from './volunteer-registration/volunteer-registration.component';
+import { CaregiverRegistrationComponent } from './caregiver-registration/caregiver-registration.component';
+import { MemberRegistrationComponent } from './member-registration/member-registration.component';
+import { LoginComponent } from './login/login.component';
+import { FoodSafetyComponent } from './food-safety/food-safety.component';
 import { DeliveryComponentComponent } from './delivery-component/delivery-component.component';
 
 const appRoutes: Routes = [
@@ -37,6 +41,22 @@ const appRoutes: Routes = [
   {
     path: 'volunteer-register',
     component: VolunteerRegistrationComponent
+  },
+  {
+    path: 'caregiver-register',
+    component: CaregiverRegistrationComponent
+  },
+  {
+    path: 'member-register',
+    component: MemberRegistrationComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'food-safety',
+    component: FoodSafetyComponent
   },
   {
     path: 'delivery-status',
