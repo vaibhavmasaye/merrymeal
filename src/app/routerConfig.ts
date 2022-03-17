@@ -5,6 +5,7 @@ import { TransationInfoComponent } from './transation-info/transation-info.compo
 import {CreateMenuComponent} from './create-menu/create-menu.component';
 import {DisplayMenuComponent} from './display-menu/display-menu.component';
 import { VolunteerRegistrationComponent } from './volunteer-registration/volunteer-registration.component';
+import { DeliveryComponentComponent } from './delivery-component/delivery-component.component';
 
 const appRoutes: Routes = [
 //    { path: '', 
@@ -22,15 +23,24 @@ const appRoutes: Routes = [
     component: CreateMenuComponent
   },
   {
+    path: 'edit-menu/:id',
+    component: CreateMenuComponent
+  },
+  {
     path: 'display-menu',
-    component: DisplayMenuComponent},
-    {
+    component: DisplayMenuComponent
+  },
+  {
     path: 'partner-register',
     component: PartnerRegistrationComponent
   },
   {
     path: 'volunteer-register',
     component: VolunteerRegistrationComponent
+  },
+  {
+    path: 'delivery-status',
+    component: DeliveryComponentComponent
   }
 ];
 export default appRoutes;

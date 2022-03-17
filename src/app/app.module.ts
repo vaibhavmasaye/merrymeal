@@ -15,6 +15,7 @@ import { CreateMenuComponent } from './create-menu/create-menu.component';
 import { DisplayMenuComponent } from './display-menu/display-menu.component';
 import { PartnerRegistrationComponent } from './partner-registration/partner-registration.component';
 import { VolunteerRegistrationComponent } from './volunteer-registration/volunteer-registration.component';
+import { DeliveryComponentComponent } from './delivery-component/delivery-component.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { VolunteerRegistrationComponent } from './volunteer-registration/volunte
     CreateMenuComponent,
     DisplayMenuComponent,
     PartnerRegistrationComponent,
-    VolunteerRegistrationComponent
+    VolunteerRegistrationComponent,
+    DeliveryComponentComponent
   ],
   imports: [
     BrowserModule,

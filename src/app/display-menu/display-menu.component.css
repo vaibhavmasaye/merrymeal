@@ -1,10 +1,15 @@
+body {
+  background-image: linear-gradient(white, rgb(149, 255, 149));
+  height: 100vh;
+}
 .week {
   display: flex;
   align-items: center;
   margin: 2vw;
   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.4);
+  background-color: white;
 }
-.monday {
+/*.monday {
   flex: 0.2;
   border: 1px solid black;
   width: 100%;
@@ -13,12 +18,15 @@
   overflow-y: scroll;
   overflow-x: scroll;
 }
-/* .monday::-webkit-scrollbar{
+ .monday::-webkit-scrollbar{
     display: none;
-  } */
+  } 
 .monday > h3 {
   text-align: center;
   font-size: 3vw;
+}
+.monday > p {
+  font-size: 2vw;
 }
 .tuesday {
   flex: 0.2;
@@ -33,6 +41,9 @@
   text-align: center;
   font-size: 3vw;
 }
+.tuesday > p {
+  font-size: 2vw;
+}
 .wednesday {
   flex: 0.2;
   border: 1px solid black;
@@ -45,6 +56,9 @@
 .wednesday > h3 {
   text-align: center;
   font-size: 3vw;
+}
+.wednesday > p {
+  font-size: 2vw;
 }
 .thursday {
   flex: 0.2;
@@ -59,6 +73,9 @@
   text-align: center;
   font-size: 3vw;
 }
+.thursday > p {
+  font-size: 2vw;
+}
 .friday {
   flex: 0.2;
   border: 1px solid black;
@@ -72,25 +89,44 @@
   text-align: center;
   font-size: 3vw;
 }
+.friday > p {
+  font-size: 2vw;
+}*/
 .radio_button {
   display: flex;
   align-items: center;
 }
-
-.radio_button > label {
+.radio_button > div {
+  margin: 20px;
+}
+.label {
   font-size: larger;
   margin: 0 2vw;
+}
+.input:hover {
+  cursor: pointer;
 }
 
 .radio_button > button {
   margin: 0 2vw;
   right: 0;
-  background-color: white !important;
+  background-color: rgb(248, 255, 240);
   border: none;
   transition: transform 400ms;
 }
+
 .radio_button > button:hover {
   transform: scale(1.2);
-  background-color: grey;
+  background-color: rgb(227, 255, 227);
+  cursor: pointer;
+}
+.table {
+  transition: transform 300ms;
+  color: rgb(68, 92, 55);
+}
+.table:hover {
+  background-color: white;
+  color: black;
+  transform: scale(0.98);
   cursor: pointer;
 }

@@ -12,4 +12,21 @@ export class ServiceService {
   AddUser(data: any) {
     return this.http.post(this.Url+'/register', data);
   }
+  GetMenu(foodtype: any){
+    return this.http.get(this.Url+ '/getMenubytype/' + foodtype)
+  }
+  AddMenu(data:any){
+    return this.http.post(this.Url+'/AddMenu', data);
+  }
+  DeleteMenu(id:any){
+    return this.http.delete(this.Url+'/deleteMenu/' + id);
+  }
+  EditMenu(params:any){
+    return this.http.post(this.Url + '/updateMenubyid/',  params)
+  }
+
+  GetMenuId(id: any){
+    return this.http.get(this.Url + '/getMenubyid/' + id)
+  }
+
 }
