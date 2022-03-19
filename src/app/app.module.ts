@@ -38,7 +38,7 @@ import { DeliveryComponentComponent } from './delivery-component/delivery-compon
     MemberRegistrationComponent,
     CaregiverRegistrationComponent,
     LoginComponent,
-    FoodSafetyComponent
+    FoodSafetyComponent,
     DeliveryComponentComponent
   ],
   imports: [

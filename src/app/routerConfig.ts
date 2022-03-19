@@ -10,6 +10,7 @@ import { MemberRegistrationComponent } from './member-registration/member-regist
 import { LoginComponent } from './login/login.component';
 import { FoodSafetyComponent } from './food-safety/food-safety.component';
 import { DeliveryComponentComponent } from './delivery-component/delivery-component.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 const appRoutes: Routes = [
 //    { path: '', 
@@ -17,6 +18,9 @@ const appRoutes: Routes = [
 //   },
   { path: 'donor-info', 
     component: DonarInfoComponent 
+  },
+  { path: 'AdminDashboard', 
+    component: AdminDashboardComponent 
   },
   {
     path: 'transaction-info',
