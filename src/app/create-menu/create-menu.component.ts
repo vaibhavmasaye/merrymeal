@@ -82,7 +82,7 @@ export class CreateMenuComponent implements OnInit {
     lname: this.menuData.last_name,
     mondayMenu:  this.menuData.monday,
     tuesdayMenu:  this.menuData.tuesday,
-    wednesdayMenu:  this.menuData.last_name,
+    wednesdayMenu:  this.menuData.wednesday,
     thursdayMenu:  this.menuData.thursday,
     fridayMenu:  this.menuData.friday,
     foodtype:  this.menuData.food_type,

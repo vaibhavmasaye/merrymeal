@@ -10,14 +10,7 @@
         [defaultChecked]="radio.checked"
         (change)="setFoodType(radio.value)"
       />
-    </div>  
-    <button>
-      <i class="material-icons">edit</i>
-    </button>
-
-    <button>
-      <i class="material-icons">delete</i>
-    </button>
+    </div>
   </div>
 
   <div class="week">
@@ -36,7 +29,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let item of menuData">
-          <td>{{ item.created_date  | date : "short"  }}</td>
+          <td>{{ item.created_date | date: "short" }}</td>
           <td>{{ item.first_name }} {{ item.last_name }}</td>
           <td>
             {{ item.monday }}
@@ -54,10 +47,13 @@
             {{ item.friday }}
           </td>
           <td>
-            <button (click)="deleteMenu(item.id)"  ><i class="material-icons">delete</i></button>
-             &nbsp;
-            <button [routerLink]="['/edit-menu/', item.id]" ><i class="material-icons">edit</i></button>
-            
+            <button (click)="deleteMenu(item.id)">
+              <i class="material-icons">delete</i>
+            </button>
+            &nbsp;
+            <button [routerLink]="['/edit-menu/', item.id]">
+              <i class="material-icons">edit</i>
+            </button>
           </td>
         </tr>
       </tbody>
