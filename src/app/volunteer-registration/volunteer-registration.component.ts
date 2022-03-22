@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { ServiceService } from '../service.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-volunteer-registration',
@@ -44,6 +45,7 @@ export class VolunteerRegistrationComponent implements OnInit {
   api_message: "";
 
   constructor(
+    public router:Router,
     private formBuilder: FormBuilder,
     private HttpService:ServiceService,
   ) { 
@@ -103,7 +105,8 @@ export class VolunteerRegistrationComponent implements OnInit {
       address: this.formData.address,
       contact_number: this.formData.contact_number,
       postal_code: this.formData.postal_code,
-      prospects: this.food
+      prospects: this.food,
+      user_type: "Volunteer"
 
 
 
@@ -122,7 +125,7 @@ export class VolunteerRegistrationComponent implements OnInit {
             'success'
           )
         }, 0);
-        // this.router.navigate(['/login']);
+        this.router.navigate(['/login']);
       },
       (err: { message: string; }) => (this.error = err.message)
     );

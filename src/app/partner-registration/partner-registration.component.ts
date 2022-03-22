@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ServiceService } from '../service.service';
 import Swal from 'sweetalert2';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-partner-registration',
@@ -31,6 +32,7 @@ export class PartnerRegistrationComponent implements OnInit {
   api_message: "";
 
   constructor(
+    public router:Router,
     private formBuilder: FormBuilder,
     private HttpService:ServiceService,
   ) {
@@ -67,7 +69,8 @@ export class PartnerRegistrationComponent implements OnInit {
       address: this.formData.address,
       contact_number: this.formData.contact_number,
       postal_code: this.formData.postal_code,
-      prospects: this.formData.prospects
+      prospects: this.formData.prospects,
+      user_type: "Partner"
         };
     this.submitted = true
     if (this.createAppForm.invalid) {
@@ -84,7 +87,7 @@ export class PartnerRegistrationComponent implements OnInit {
           )
         }, 0);
         
-        // this.router.navigate(['/login']);
+        this.router.navigate(['/login']);
       },
       (err: { message: string; }) => (this.error = err.message)
     );

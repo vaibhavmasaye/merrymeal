@@ -12,6 +12,8 @@ import { FoodSafetyComponent } from './food-safety/food-safety.component';
 import { DeliveryComponentComponent } from './delivery-component/delivery-component.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { IndexComponent } from './index/index.component';
+import { PartnerDashboardComponent } from './partner-dashboard/partner-dashboard.component';
+import { MemberDashboardComponent } from './member-dashboard/member-dashboard.component';
 
 const appRoutes: Routes = [
    { path: '', 
@@ -26,6 +28,12 @@ const appRoutes: Routes = [
   { path: 'AdminDashboard', 
     component: AdminDashboardComponent 
   },
+  { path: 'partner-dashboard', 
+    component: PartnerDashboardComponent 
+  },
+  { path: 'member-dashboard', 
+  component: MemberDashboardComponent 
+},
   {
     path: 'transaction-info',
     component: TransationInfoComponent
