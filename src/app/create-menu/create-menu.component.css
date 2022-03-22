@@ -78,6 +78,7 @@ button:focus {
   display: flex;
   text-align: center;
   height: 40vh;
+  background-color: white !important;
 }
 .header_title {
   flex: 0.5;
