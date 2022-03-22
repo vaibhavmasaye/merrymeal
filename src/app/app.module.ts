@@ -25,6 +25,8 @@ import { DeliveryComponentComponent } from './delivery-component/delivery-compon
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { IndexComponent } from './index/index.component';
+import { PartnerDashboardComponent } from './partner-dashboard/partner-dashboard.component';
+import { MemberDashboardComponent } from './member-dashboard/member-dashboard.component';
 
 
 @NgModule({
@@ -45,7 +47,9 @@ import { IndexComponent } from './index/index.component';
     DeliveryComponentComponent,
     NavBarComponent,
     FooterComponent,
-    IndexComponent
+    IndexComponent,
+    PartnerDashboardComponent,
+    MemberDashboardComponent
   ],
   imports: [
     BrowserModule,
