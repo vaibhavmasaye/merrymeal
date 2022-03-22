@@ -1,0 +1,13 @@
+.Testimonials{
+color: var(--e-global-color-primary);
+font-family: "neue-haas-grotesk-display",Sans-serif;
+font-size: 2.25em;
+font-weight: 700;
+line-height: 1.5em;
+letter-spacing: 1px;
+text-align: center;
+}
+
+.Testimonials{
+    color: black;
+    }

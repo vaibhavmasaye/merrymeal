@@ -6,7 +6,7 @@
 <!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
+<!-- 
 <button class="btn" type="button" style="background-color: #8bc53f">
   <a
     routerLink="donor-info"
@@ -29,10 +29,10 @@
     >Display Menu</a
   >
 </button>
-
-<button class="btn" type="button" (click)="logoutUser()"  style="background-color: #8bc53f; color: rgb(255, 255, 255); text-decoration: none;">Logout</button>
-
-<button class="btn" type="button"   style="background-color: #8bc53f;"><a routerLink="donor-info" style="color: rgb(255, 255, 255); text-decoration: none;">Donate Now</a></button>
-<router-outlet></router-outlet>
-<!-- <app-admin-dashboard></app-admin-dashboard> -->
+ -->
+<app-nav-bar></app-nav-bar>
+<router-outlet>
+  
+</router-outlet>
+<app-footer></app-footer>
 

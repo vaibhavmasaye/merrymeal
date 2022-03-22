@@ -10,15 +10,23 @@ import { MemberRegistrationComponent } from './member-registration/member-regist
 import { LoginComponent } from './login/login.component';
 import { FoodSafetyComponent } from './food-safety/food-safety.component';
 import { DeliveryComponentComponent } from './delivery-component/delivery-component.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { IndexComponent } from './index/index.component';
 import { PartnerDashboardComponent } from './partner-dashboard/partner-dashboard.component';
 import { MemberDashboardComponent } from './member-dashboard/member-dashboard.component';
 
 const appRoutes: Routes = [
-//    { path: '', 
-//     component: HomeComponent 
-//   },
+   { path: '', 
+    component:  IndexComponent
+  },
+  { path: 'home', 
+  component:  IndexComponent
+},
   { path: 'donor-info', 
     component: DonarInfoComponent 
+  },
+  { path: 'AdminDashboard', 
+    component: AdminDashboardComponent 
   },
   { path: 'partner-dashboard', 
     component: PartnerDashboardComponent 
