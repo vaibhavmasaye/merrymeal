@@ -22,6 +22,9 @@ import { CaregiverRegistrationComponent } from './caregiver-registration/caregiv
 import { LoginComponent } from './login/login.component';
 import { FoodSafetyComponent } from './food-safety/food-safety.component';
 import { DeliveryComponentComponent } from './delivery-component/delivery-component.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { FooterComponent } from './footer/footer.component';
+import { IndexComponent } from './index/index.component';
 
 
 @NgModule({
@@ -39,7 +42,10 @@ import { DeliveryComponentComponent } from './delivery-component/delivery-compon
     CaregiverRegistrationComponent,
     LoginComponent,
     FoodSafetyComponent,
-    DeliveryComponentComponent
+    DeliveryComponentComponent,
+    NavBarComponent,
+    FooterComponent,
+    IndexComponent
   ],
   imports: [
     BrowserModule,
