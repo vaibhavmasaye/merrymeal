@@ -23,7 +23,7 @@ background-image: url(../assets/images/bg1.jpg);">
         </div>
        
     </div>
-    <div class="container container-holder">
+    <div class="container container-holder" >
         <div class="wrapper row-offcanvas row-offcanvas-left">
             <form name="form1" id="form1" action="" method="post">
             <div class="row" style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;" >
@@ -42,10 +42,10 @@ background-image: url(../assets/images/bg1.jpg);">
 
                 <div class="col-md-9 col-md-pull-3" id="main-container">
 <div class="row" id="verticalTab">
-    <div class="col-sm-3" style="background-color: #ccc;">
-            <section class="sidebar" >
+    <div class="col-sm-3" style="padding: 0px !important;">
+            <section class="sidebar" style="border: none !important; padding: 0px !important;" >
                 
-                <ul class="tabs sidebar-menu resp-tabs-list" data-retry="false">
+                <ul class="tabs sidebar-menu resp-tabs-list" style="border: none !important;" data-retry="false">
 
                     <li class="option"><span><i class="fas fa-credit-card" style="padding: 4px; font-size:20px"></i></span> Credit Card</li>
                     <li class="option"><span><i class="fas fa-credit-card" style="padding: 4px; font-size:20px"></i></span> Debit Card</li>
@@ -53,10 +53,6 @@ background-image: url(../assets/images/bg1.jpg);">
                     <li class="option"><span><i class="fas fa-wallet" style="padding: 4px; font-size:20px"></i></span>Wallet/ Cash Card</li>
                     <li class="option"><span><i class="fas fa-qrcode"style="padding: 4px; font-size:20px"></i></span> QR</li>
                     <li class="option"><span><i class="fas fa-exchange-alt " style="padding: 4px; font-size:20px"></i></span> UPI</li>
-                </ul>
-
-                <ul class="pager">
-                    <li class="previous"><a class="abort" onclick="cancelForm();"><i class="fa fa-chevron-left"></i> Click here to abort transaction and go back to merchant site</a></li>
                 </ul>
                 <!-- <div id="hamburgerbilldesk" class="col-md-12 modal-footer"><img src="../../pgmerc/bdqp/resources/assets/images/billdesk-logo.png" alt="Powered by BillDesk"></div> -->
             </section>

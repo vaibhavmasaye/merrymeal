@@ -4,10 +4,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import appRoutes from './routerConfig';
 import { HttpClientModule } from '@angular/common/http';
-
+import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DonarInfoComponent } from './donar-info/donar-info.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TransationInfoComponent } from './transation-info/transation-info.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AdminNavComponent } from './admin-nav/admin-nav.component';
@@ -15,7 +17,15 @@ import { CreateMenuComponent } from './create-menu/create-menu.component';
 import { DisplayMenuComponent } from './display-menu/display-menu.component';
 import { PartnerRegistrationComponent } from './partner-registration/partner-registration.component';
 import { VolunteerRegistrationComponent } from './volunteer-registration/volunteer-registration.component';
+import { MemberRegistrationComponent } from './member-registration/member-registration.component';
+import { CaregiverRegistrationComponent } from './caregiver-registration/caregiver-registration.component';
+import { LoginComponent } from './login/login.component';
+import { FoodSafetyComponent } from './food-safety/food-safety.component';
 import { DeliveryComponentComponent } from './delivery-component/delivery-component.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { FooterComponent } from './footer/footer.component';
+import { IndexComponent } from './index/index.component';
+
 
 @NgModule({
   declarations: [
@@ -28,14 +38,26 @@ import { DeliveryComponentComponent } from './delivery-component/delivery-compon
     DisplayMenuComponent,
     PartnerRegistrationComponent,
     VolunteerRegistrationComponent,
-    DeliveryComponentComponent
+    MemberRegistrationComponent,
+    CaregiverRegistrationComponent,
+    LoginComponent,
+    FoodSafetyComponent,
+    DeliveryComponentComponent,
+    NavBarComponent,
+    FooterComponent,
+    IndexComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      positionClass: 'toast-bottom-right',
+    }),
     RouterModule.forRoot(appRoutes),
   ],
   providers: [],

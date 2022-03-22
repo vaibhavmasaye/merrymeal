@@ -5,14 +5,26 @@ import { TransationInfoComponent } from './transation-info/transation-info.compo
 import {CreateMenuComponent} from './create-menu/create-menu.component';
 import {DisplayMenuComponent} from './display-menu/display-menu.component';
 import { VolunteerRegistrationComponent } from './volunteer-registration/volunteer-registration.component';
+import { CaregiverRegistrationComponent } from './caregiver-registration/caregiver-registration.component';
+import { MemberRegistrationComponent } from './member-registration/member-registration.component';
+import { LoginComponent } from './login/login.component';
+import { FoodSafetyComponent } from './food-safety/food-safety.component';
 import { DeliveryComponentComponent } from './delivery-component/delivery-component.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { IndexComponent } from './index/index.component';
 
 const appRoutes: Routes = [
-//    { path: '', 
-//     component: HomeComponent 
-//   },
+   { path: '', 
+    component:  IndexComponent
+  },
+  { path: 'home', 
+  component:  IndexComponent
+},
   { path: 'donor-info', 
     component: DonarInfoComponent 
+  },
+  { path: 'AdminDashboard', 
+    component: AdminDashboardComponent 
   },
   {
     path: 'transaction-info',
@@ -37,6 +49,22 @@ const appRoutes: Routes = [
   {
     path: 'volunteer-register',
     component: VolunteerRegistrationComponent
+  },
+  {
+    path: 'caregiver-register',
+    component: CaregiverRegistrationComponent
+  },
+  {
+    path: 'member-register',
+    component: MemberRegistrationComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'food-safety',
+    component: FoodSafetyComponent
   },
   {
     path: 'delivery-status',
