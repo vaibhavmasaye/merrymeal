@@ -105,7 +105,8 @@ export class VolunteerRegistrationComponent implements OnInit {
       address: this.formData.address,
       contact_number: this.formData.contact_number,
       postal_code: this.formData.postal_code,
-      prospects: this.food
+      prospects: this.food,
+      user_type: "Volunteer"
 
 
 
