@@ -69,7 +69,8 @@ export class PartnerRegistrationComponent implements OnInit {
       address: this.formData.address,
       contact_number: this.formData.contact_number,
       postal_code: this.formData.postal_code,
-      prospects: this.formData.prospects
+      prospects: this.formData.prospects,
+      user_type: "Partner"
         };
     this.submitted = true
     if (this.createAppForm.invalid) {

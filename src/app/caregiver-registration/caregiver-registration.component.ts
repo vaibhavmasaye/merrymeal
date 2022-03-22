@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ServiceService } from '../service.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-caregiver-registration',
@@ -34,6 +35,7 @@ export class CaregiverRegistrationComponent implements OnInit {
   fileName = '';
   file_doc: any;
   fileresData: any;
+  api_message: string;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -125,9 +127,16 @@ export class CaregiverRegistrationComponent implements OnInit {
           };
 
           this.HttpService.AddUser(this.data).subscribe((res) => { 
-            console.log("Caregiver Added Successfully")
-            alert("Caregiver Registered!\n\nClick ok to Login.")
-            this.router.navigate(['/login']);
+            // console.log("Caregiver Added Successfully")
+            // alert("Caregiver Registered!\n\nClick ok to Login.")
+            // this.router.navigate(['/login']);
+            Swal.fire(
+              'Your Details have been registered sucessfully',
+              this.api_message,
+              'success'
+            ).then(() => {
+              this.router.navigate(['/login']);
+            })
           },
           (err: { message: string; }) => (this.error = err.message)
           );
