@@ -34,8 +34,19 @@ export class LoginComponent implements OnInit {
 
     });
    }
+   loggged_user_email: any;
+  is_logged_in: any;
+
 
   ngOnInit(): void {
+    if(localStorage.getItem("is_logged_in")){
+      this.loggged_user_email = localStorage.getItem("email")
+      this.is_logged_in = localStorage.getItem("is_logged_in")
+      console.log(this.is_logged_in, "LOGGED IN")
+    }
+    else{
+      localStorage.setItem("is_logged_in","false");
+    }
   }
 
   get f() { return this.userLoginForm.controls; }
@@ -79,25 +90,31 @@ export class LoginComponent implements OnInit {
           localStorage.setItem("dob", this.resData.dob);
           localStorage.setItem("gender", this.resData.gender);
           localStorage.setItem("volunteer_availability", this.resData.volunteer_availability);
+          localStorage.setItem("is_logged_in","true");
+         
 
           // setTimeout(()=>{ 
             Swal.fire(
               'User Logged in Sucessfully',
               this.api_message,
+          
               'success'
             ).then(() => {
               if(this.resData.user_type == "Member") {
                 this.router.navigate(['/member-dashboard']);
+                
               }
               if(this.resData.user_type == "Caregiver") {
                 this.router.navigate(['/member-dashboard']);
               }
               if(this.resData.user_type == "Partner") {
                 this.router.navigate(['/partner-dashboard']);
+                
               }
               if(this.resData.user_type == "Volunteer") {
                 this.router.navigate(['/partner-dashboard']);
               }
+             
             })
             // , 0);
           
