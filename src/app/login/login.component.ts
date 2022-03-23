@@ -39,14 +39,7 @@ export class LoginComponent implements OnInit {
 
 
   ngOnInit(): void {
-    if(localStorage.getItem("is_logged_in")){
-      this.loggged_user_email = localStorage.getItem("email")
-      this.is_logged_in = localStorage.getItem("is_logged_in")
-      console.log(this.is_logged_in, "LOGGED IN")
-    }
-    else{
-      localStorage.setItem("is_logged_in","false");
-    }
+    
   }
 
   get f() { return this.userLoginForm.controls; }
@@ -68,7 +61,7 @@ export class LoginComponent implements OnInit {
         this.resData = res
         if(this.resData == null){
           alert("Email or Password is incorrect, please enter correct credentails.")
-          console.log("User Loggin Unuccessful")
+          console.log("User Login Unuccessful")
         } else{  
           console.log("User Logged In Successfully")
           // console.log("User Data", this.resData)
@@ -93,43 +86,39 @@ export class LoginComponent implements OnInit {
           localStorage.setItem("is_logged_in","true");
          
 
-          // setTimeout(()=>{ 
             Swal.fire(
               'User Logged in Sucessfully',
               this.api_message,
-          
               'success'
             ).then(() => {
               if(this.resData.user_type == "Member") {
-                this.router.navigate(['/member-dashboard']);
+                this.router.navigate(['/member-dashboard'])
+                .then(() => {
+                  window.location.reload();
+                });
                 
               }
               if(this.resData.user_type == "Caregiver") {
-                this.router.navigate(['/member-dashboard']);
+                this.router.navigate(['/member-dashboard'])
+                .then(() => {
+                  window.location.reload();
+                });
               }
               if(this.resData.user_type == "Partner") {
-                this.router.navigate(['/partner-dashboard']);
-                
+                this.router.navigate(['/partner-dashboard'])
+                .then(() => {
+                  window.location.reload();
+                });
               }
               if(this.resData.user_type == "Volunteer") {
-                this.router.navigate(['/partner-dashboard']);
+                this.router.navigate(['/partner-dashboard'])
+                .then(() => {
+                  window.location.reload();
+                });
               }
              
             })
-            // , 0);
-          
-          // if(this.resData.user_type == "Member") {
-          //   this.router.navigate(['/member-dashboard']);
-          // }
-          // if(this.resData.user_type == "Caregiver") {
-          //   this.router.navigate(['/member-dashboard']);
-          // }
-          // if(this.resData.user_type == "Partner") {
-          //   this.router.navigate(['/partner-dashboard']);
-          // }
-          // if(this.resData.user_type == "Volunteer") {
-          //   this.router.navigate(['/partner-dashboard']);
-          // }
+
         }
         
       },
