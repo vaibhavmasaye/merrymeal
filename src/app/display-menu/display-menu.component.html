@@ -11,13 +11,13 @@
         (change)="setFoodType(radio.value)"
       />
     </div>  
-    <button>
+    <!-- <button>
       <i class="material-icons">edit</i>
     </button>
 
     <button>
       <i class="material-icons">delete</i>
-    </button>
+    </button> -->
   </div>
 
   <div class="week">
@@ -31,7 +31,7 @@
           <th>Wednesday</th>
           <th>Thursday</th>
           <th>Friday</th>
-          <th>Actions</th>
+          <th *ngIf="userType === 'Partner'"  >Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -53,7 +53,7 @@
           <td>
             {{ item.friday }}
           </td>
-          <td>
+          <td *ngIf="userType === 'Partner'" >
             <button (click)="deleteMenu(item.id)"  ><i class="material-icons">delete</i></button>
              &nbsp;
             <button [routerLink]="['/edit-menu/', item.id]" ><i class="material-icons">edit</i></button>
