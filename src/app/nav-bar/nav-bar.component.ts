@@ -8,21 +8,19 @@ import { Router } from '@angular/router';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor(private router: Router) { }
   loggged_user_email: any;
   is_logged_in: any;
 
+  constructor(private router: Router) { }
+
   ngOnInit(): void {
     
-    if(localStorage.getItem("is_logged_in")){
-      this.loggged_user_email = localStorage.getItem("email")
-      this.is_logged_in = localStorage.getItem("is_logged_in")
-     
-      console.log(this.is_logged_in, "LOGGED IN")
-    }
-    else{
-      this.is_logged_in= false;
-    }
+      if(localStorage.getItem("is_logged_in")){
+        this.loggged_user_email = localStorage.getItem("email")
+        this.is_logged_in = localStorage.getItem("is_logged_in")
+       
+        console.log(this.is_logged_in, "LOGGED IN")
+      };
     
   }
 
@@ -47,6 +45,7 @@ export class NavBarComponent implements OnInit {
     localStorage.removeItem("gender");
     localStorage.removeItem("volunteer_availability");
     localStorage.removeItem("is_logged_in");
+    this.is_logged_in= false;
     this.router.navigate(['/login']);
   }
 
