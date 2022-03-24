@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+
+import {Router} from '@angular/router';
+
 @Component({
   selector: 'app-partner-dashboard',
   templateUrl: './partner-dashboard.component.html',
@@ -7,11 +9,13 @@ import { Router } from '@angular/router';
 })
 export class PartnerDashboardComponent implements OnInit {
 
-  constructor( private router: Router) { }
+
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
-
-    
+  }
+  createMenu= function(){
+    this.router.navigateByUrl('/create-menu')
   }
 
 }
