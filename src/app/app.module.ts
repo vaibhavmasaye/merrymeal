@@ -29,9 +29,6 @@ import { IndexComponent } from './index/index.component';
 import { PartnerDashboardComponent } from './partner-dashboard/partner-dashboard.component';
 import { MemberDashboardComponent } from './member-dashboard/member-dashboard.component';
 
-import { PartnerDashboardComponent } from './partner-dashboard/partner-dashboard.component';
-import { MemberDashboardComponent } from './member-dashboard/member-dashboard.component';
-
 
 @NgModule({
   declarations: [
