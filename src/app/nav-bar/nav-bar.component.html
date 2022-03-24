@@ -21,10 +21,19 @@
           <li class="nav-item m-2">
             <a class="nav-link" href="#"style="color: white;">Contact</a>
           </li>
+          <li class="nav-item m-2" *ngIf="is_logged_in">
+            <a class="nav-link" routerLink="display-menu" style="color: white;">Menu</a>
+          </li>
+          
+          <li class="nav-item m-2" *ngIf="is_logged_in">
+            <a class="nav-link" routerLink="food-safety" style="color: white;">food safety</a>
+          </li>
           <li class="nav-item m-2">
+            <div  *ngIf="is_logged_in">
+            <button class="btn" type="button" (click)="logoutUser()" style="background-color: #0d6efd; color: white;">Logout</button>
+          </div>
 
-
-            <button type="button" class="btn" style="background-color: #0d6efd; color: white;"><a routerLink="login" style="color: rgb(255, 255, 255); text-decoration: none;">Sign Up</a></button>
+            <button type="button" class="btn" *ngIf="!is_logged_in" style="background-color: #0d6efd; color: white;"><a routerLink="login" style="color: rgb(255, 255, 255); text-decoration: none;">Sign In</a></button>
           </li>
           <li class="nav-item m-2">
             <button type="button" class="btn " style="background-color: #8bc53f; color: white;"><a routerLink="donor-info" style="color: rgb(255, 255, 255); text-decoration: none;">Donate Now</a></button>

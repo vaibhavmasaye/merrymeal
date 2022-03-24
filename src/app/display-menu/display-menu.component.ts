@@ -17,11 +17,13 @@ export class DisplayMenuComponent implements OnInit {
   foodType = 'veg'
   menuData: any
   typeArray: any
-
+  userType:any
 
   ngOnInit(): void {
     // this.foodType = 'veg'
     // this.getMenu()
+    this.userType =localStorage.getItem("user_type");
+    console.log(localStorage.getItem("user_type"));
     this.typeArray = [
       { name: 'Veg', value: 'veg', checked: true},
       { name: 'Non-Veg', value: 'non-veg', checked: false},

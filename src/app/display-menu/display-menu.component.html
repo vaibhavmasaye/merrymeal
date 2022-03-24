@@ -10,7 +10,6 @@
         [defaultChecked]="radio.checked"
         (change)="setFoodType(radio.value)"
       />
-    </div>
   </div>
 
   <div class="week">
@@ -24,7 +23,7 @@
           <th>Wednesday</th>
           <th>Thursday</th>
           <th>Friday</th>
-          <th>Actions</th>
+          <th *ngIf="userType === 'Partner'"  >Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -46,7 +45,9 @@
           <td>
             {{ item.friday }}
           </td>
-          <td>
+
+          <td *ngIf="userType === 'Partner'" >
+
             <button (click)="deleteMenu(item.id)">
               <i class="material-icons">delete</i>
             </button>

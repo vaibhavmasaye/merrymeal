@@ -1,4 +1,6 @@
-<body>
+
+<br>
+
     <div class="container-fluid">
       <div id="demo" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
@@ -37,61 +39,57 @@
         </div>
 
         <!-- Left and right controls -->
-        <a class="carousel-control-prev" href="#demo" data-slide="prev">
-          <span class="carousel-control-prev-icon"></span>
-        </a>
-        <a class="carousel-control-next" href="#demo" data-slide="next">
-          <span class="carousel-control-next-icon"></span>
-        </a>
-      </div>
-      <div class="container-card">
-        <div class="text-center divider_class">
-          <h1>Recent Order <span style="font-size: 50px">&#128071;</span></h1>
-        </div>
-        <div class="card">
-          <div class="card-header">FoodType</div>
-          <div class="card-body">type of food</div>
-        </div>
-        <br />
-        <div class="card">
-          <div class="card-header">Meal service provider</div>
-          <div class="card-body">service provider</div>
-        </div>
-      </div>
-      <br />
-      <div class="row partner">
-        <div class="col-md-12">
-          <div id="card-530990">
-            <div class="card">
-              <div class="card-header">
-                <a
-                  class="card-link collapsed"
-                  data-toggle="collapse"
-                  data-parent="#card-530990"
-                  href="#card-element-447153"
-                  >Partner CEO Experience</a
-                >
-              </div>
-              <div id="card-element-447153" class="collapse">
-                <div class="card-body">Anim pariatur cliche...</div>
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header card-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                FoodType
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div class="accordion-body card-body">
+                <strong>type of food</strong>
               </div>
             </div>
-            <div class="card">
-              <div class="card-header">
-                <a
-                  class="card-link collapsed"
-                  data-toggle="collapse"
-                  data-parent="#card-530990"
-                  href="#card-element-141234"
-                  >Partner CEO Benefits</a
-                >
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header card-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Meal service provider
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+              <div class="accordion-body card-body">
+                <strong>service provider</strong>
               </div>
-              <div id="card-element-141234" class="collapse">
-                <div class="card-body">Anim pariatur cliche...</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header card-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Partner CEO Experience
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+              <div class="accordion-body card-body">
+                <strong>Anim pariatur cliche...</strong> 
+              </div>
+            </div>
+          </div>
+            <div class="accordion-item">
+            <h2 class="accordion-header card-header" id="headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                Partner CEO Benefits
+              </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+              <div class="accordion-body card-body">
+                <strong>Anim pariatur cliche...</strong> 
               </div>
             </div>
           </div>
         </div>
+    <br><br>
       </div>
     </div>
-  </body>
+

@@ -22,9 +22,13 @@ import { CaregiverRegistrationComponent } from './caregiver-registration/caregiv
 import { LoginComponent } from './login/login.component';
 import { FoodSafetyComponent } from './food-safety/food-safety.component';
 import { DeliveryComponentComponent } from './delivery-component/delivery-component.component';
+
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { IndexComponent } from './index/index.component';
+import { PartnerDashboardComponent } from './partner-dashboard/partner-dashboard.component';
+import { MemberDashboardComponent } from './member-dashboard/member-dashboard.component';
+
 import { PartnerDashboardComponent } from './partner-dashboard/partner-dashboard.component';
 import { MemberDashboardComponent } from './member-dashboard/member-dashboard.component';
 
