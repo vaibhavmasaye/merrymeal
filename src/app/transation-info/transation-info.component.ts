@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 declare var $: any
 @Component({
   selector: 'app-transation-info',
@@ -6,8 +8,11 @@ declare var $: any
   styleUrls: ['./transation-info.component.css']
 })
 export class TransationInfoComponent implements OnInit {
+  api_message: string;
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
 
@@ -22,6 +27,20 @@ export class TransationInfoComponent implements OnInit {
       });
       
     });
+    this.Sucessfully();
+
   }
+
+  Sucessfully(){
+    Swal.fire(
+      'Your Donation is Sucessfully',
+      this.api_message,
+      'success'
+    ).then(() => {
+      this.router.navigate(['/home'])
+     
+    })
+  };
+  
 
 }
