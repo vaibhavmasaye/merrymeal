@@ -18,7 +18,6 @@ export class NavBarComponent implements OnInit {
       if(localStorage.getItem("is_logged_in")){
         this.loggged_user_email = localStorage.getItem("email")
         this.is_logged_in = localStorage.getItem("is_logged_in")
-       
         console.log(this.is_logged_in, "LOGGED IN")
       };
     

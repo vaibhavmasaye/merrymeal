@@ -62,12 +62,13 @@
             <div class="row justify-content-between text-left">
               <div class="form-group col-sm-6 flex-column d-flex">
                 <label class="form-control-label px-3">First name </label>
-                <input
+                
+                <input [disabled]="true"
                   type="text"
                   id="fname"
                   name="fname"
                   formControlName="fname"
-                  placeholder="Enter your first name"
+                  placeholder="Enter your first name" 
                 />
                 <div
                   *ngIf="u['fname'].touched && u['fname'].invalid"
@@ -87,7 +88,7 @@
                   id="lname"
                   name="lname"
                   formControlName="lname"
-                  placeholder="Enter your last name"
+                  placeholder="Enter your last name" [disabled]="true"
                 />
                 <div
                   *ngIf="u['lname'].touched && u['lname'].invalid"

@@ -11,8 +11,8 @@ import { HttpParams } from '@angular/common/http';
 })
 export class CreateMenuComponent implements OnInit {
   createMenu_form = new FormGroup({
-    fname: new FormControl('', Validators.required),
-    lname: new FormControl('', Validators.required),
+    fname: new FormControl(localStorage.getItem('first_name'), Validators.required),
+    lname: new FormControl(localStorage.getItem('last_name'), Validators.required),
     mondayMenu: new FormControl('', [Validators.required]),
     tuesdayMenu: new FormControl('', [Validators.required]),
     wednesdayMenu: new FormControl('', [Validators.required]),
@@ -82,7 +82,7 @@ export class CreateMenuComponent implements OnInit {
     lname: this.menuData.last_name,
     mondayMenu:  this.menuData.monday,
     tuesdayMenu:  this.menuData.tuesday,
-    wednesdayMenu:  this.menuData.last_name,
+    wednesdayMenu:  this.menuData.wednesday,
     thursdayMenu:  this.menuData.thursday,
     fridayMenu:  this.menuData.friday,
     foodtype:  this.menuData.food_type,
