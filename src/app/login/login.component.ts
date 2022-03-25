@@ -60,8 +60,13 @@ export class LoginComponent implements OnInit {
       this.HttpService.loginUser(this.data).subscribe((res) => { 
         this.resData = res
         if(this.resData == null){
-          alert("Email or Password is incorrect, please enter correct credentails.")
-          console.log("User Login Unuccessful")
+          // alert("Email or Password is incorrect, please enter correct credentails.")
+          // console.log("User Login Unuccessful")
+          Swal.fire(
+            'Email or Password is incorrect, please enter correct credentails.',
+            this.api_message,
+            'error'
+          )
         } else{  
           console.log("User Logged In Successfully")
           // console.log("User Data", this.resData)

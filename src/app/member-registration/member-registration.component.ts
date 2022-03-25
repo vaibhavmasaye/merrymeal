@@ -128,7 +128,7 @@ export class MemberRegistrationComponent implements OnInit {
             address: this.formData.address,
             contact_number: this.formData.contact_number,
             postal_code: this.formData.postal_code,
-            reason: this.formData.reason,
+            reason_to_join: this.formData.reason,
             medical_certificate: this.certificate,
             password:  this.formData.password,
             user_type: "Member"
@@ -140,7 +140,7 @@ export class MemberRegistrationComponent implements OnInit {
             // this.router.navigate(['/login']);
             
               Swal.fire(
-                'Your Details have been registered sucessfully',
+                'Member Registration Sucessful',
                 this.api_message,
                 'success'
               ).then(() => {

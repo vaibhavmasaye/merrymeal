@@ -137,7 +137,7 @@ export class CaregiverRegistrationComponent implements OnInit {
             address: this.formData.address,
             contact_number: this.formData.contact_number,
             postal_code: this.formData.postal_code,
-            reason: this.formData.reason,
+            reason_to_join: this.formData.reason,
             medical_certificate: this.certificate,
             password:  this.formData.password,
             user_type: "Caregiver"
@@ -148,7 +148,7 @@ export class CaregiverRegistrationComponent implements OnInit {
             // alert("Caregiver Registered!\n\nClick ok to Login.")
             // this.router.navigate(['/login']);
             Swal.fire(
-              'Your Details have been registered sucessfully',
+              'Caregiver Registration Sucessful',
               this.api_message,
               'success'
             ).then(() => {
