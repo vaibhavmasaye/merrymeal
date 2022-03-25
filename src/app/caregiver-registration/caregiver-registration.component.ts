@@ -58,10 +58,27 @@ export class CaregiverRegistrationComponent implements OnInit {
       password: ['', [Validators.required]],
       cpassword: ['', [Validators.required]]
 
+    }, { 
+      validator: this.ConfirmedValidator('password', 'cpassword')
     });
    }
 
   ngOnInit(): void {
+  }
+
+  ConfirmedValidator(controlName: string, matchingControlName: string){
+    return (formGroup: FormGroup) => {
+        const control = formGroup.controls[controlName];
+        const matchingControl = formGroup.controls[matchingControlName];
+        if (matchingControl.errors && !matchingControl.errors['confirmedValidator']) {
+            return;
+        }
+        if (control.value !== matchingControl.value) {
+            matchingControl.setErrors({ confirmedValidator: true });
+        } else {
+            matchingControl.setErrors(null);
+        }
+    }
   }
 
   onFileSelected(event:any, doc_type:any) {

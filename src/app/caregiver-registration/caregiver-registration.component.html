@@ -150,6 +150,7 @@
 						<span class="focus-input100"></span>
 						<div *ngIf="f['cpassword'].errors && submitted" class="alert alert-danger">
 							<div *ngIf="f['cpassword'].errors['required']">Confirm Password is required.</div>
+							<div *ngIf="f['cpassword'].errors['confirmedValidator']">Password and Confirm Password must be match.</div>
 						</div>
 					</div>
 
