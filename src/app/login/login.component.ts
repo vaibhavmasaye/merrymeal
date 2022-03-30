@@ -116,6 +116,12 @@ export class LoginComponent implements OnInit {
                   window.location.reload();
                 });
               }
+              if(this.resData.user_type == "Admin") {
+                this.router.navigate(['/AdminDashboard'])
+                .then(() => {
+                  window.location.reload();
+                });
+              }
              
             })
 

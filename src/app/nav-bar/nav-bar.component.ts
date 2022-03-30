@@ -10,6 +10,7 @@ export class NavBarComponent implements OnInit {
 
   loggged_user_email: any;
   is_logged_in: any;
+  adminDashboard = true;
 
   constructor(private router: Router) { }
 
@@ -20,6 +21,13 @@ export class NavBarComponent implements OnInit {
         this.is_logged_in = localStorage.getItem("is_logged_in")
         console.log(this.is_logged_in, "LOGGED IN")
       };
+      if(localStorage.getItem("user_type") == 'Admin'){
+        this.adminDashboard = false
+        console.log(this.adminDashboard)
+      } else {
+        this.adminDashboard = true
+        console.log(this.adminDashboard)
+      }
     
   }
 
