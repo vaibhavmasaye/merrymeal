@@ -47,7 +47,8 @@
 						<input class="input100" type="text" name="email_id" [ngClass]="{ 'is-invalid': submitted && f['email_id'].errors }" formControlName="email_id" placeholder="Email addess">
 						<span class="focus-input100"></span>
 						<div *ngIf="submitted && f['email_id'].errors" class="invalid-feedback">
-							<div *ngIf="f['email_id'].errors?.['required']">Email Id required</div> 
+							<div *ngIf="f['email_id'].errors?.['required']">Email Id required</div>
+							<div *ngIf="f['email_id'].errors['email']">Valid email is required: ex@abc.xyz</div> 
 						  </div>
 					</div>
 
@@ -74,7 +75,9 @@
 						<input class="input100" type="number" name="contact_number" [ngClass]="{ 'is-invalid': submitted && f['contact_number'].errors }" formControlName="contact_number" placeholder="Enter Contact Number">
 						<span class="focus-input100"></span>
 						<div *ngIf="submitted && f['contact_number'].errors" class="invalid-feedback">
-							<div *ngIf="f['contact_number'].errors?.['required']">Contact Number is required</div> 
+							<div *ngIf="f['contact_number'].errors?.['required']">Contact Number is required</div>
+							<div *ngIf="f['contact_number'].errors['minLength']">Contact Number should be 10 character</div>
+							<div *ngIf="f['contact_number'].errors['maxLength']">Contact Number should only be 10 character</div> 
 						  </div>
 					</div>
 
@@ -83,7 +86,9 @@
 						<input class="input100" type="number" name="postal_code" [ngClass]="{ 'is-invalid': submitted && f['postal_code'].errors }" formControlName="postal_code" placeholder="Enter Postal Code">
 						<span class="focus-input100"></span>
 						<div *ngIf="submitted && f['postal_code'].errors" class="invalid-feedback">
-							<div *ngIf="f['postal_code'].errors?.['required']">Postal Code is required</div> 
+							<div *ngIf="f['postal_code'].errors?.['required']">Postal Code is required</div>
+							<div *ngIf="f['postal_code'].errors['minlength']">Postal Code should be 6 character.</div>
+                          	<div *ngIf="f['postal_code'].errors['maxlength']">Postal Code should only be 6 character.</div> 
 						  </div>
 					</div>
 

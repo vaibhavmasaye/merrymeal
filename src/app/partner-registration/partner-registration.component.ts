@@ -41,11 +41,11 @@ export class PartnerRegistrationComponent implements OnInit {
       last_name: ['', [Validators.required]],
       organisation_name: [''],
       organisation_site: [''],
-      email_id: ['', [Validators.required]],
+      email_id: ['', [Validators.required,Validators.email]],
       password: ['', [Validators.required]],
       address: ['', [Validators.required]],
-      contact_number: ['', [Validators.required]],
-      postal_code: ['', [Validators.required]],
+      contact_number: ['', [Validators.required,Validators.minLength(10), Validators.maxLength(10)]],
+      postal_code: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(6)]],
       prospects: [false],
 
 
