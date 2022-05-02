@@ -2,7 +2,8 @@ body{
     background-image: url("/assets/images/food-delivery-3.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    height: 100%;}
+    height: 100%;
+}
 
 .timeline {
     border-left: 3px solid #727cf5;
@@ -69,7 +70,7 @@ body{
     left: -207px;
     content: attr(data-date);
     text-align: right;
-    font-weight: 100;
+    font-weight: 800;
     font-size: 0.9em;
     min-width: 120px;
 }
@@ -120,8 +121,10 @@ body{
 }
 
 .main{
+    padding: 3rem;
     margin-top: 5rem ;
-    background-image: url("/assets/images/food-delivery-3.jpg");
+    margin-bottom: 5rem;
+    background: linear-gradient(0deg, rgba(255 255 255 / 69%), rgba(255 255 255 / 69%)),url("/assets/images/del.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     height: max-content;
